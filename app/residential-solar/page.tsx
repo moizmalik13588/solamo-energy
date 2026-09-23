@@ -672,48 +672,73 @@ export default function ResidentialSolarCombinedPage() {
         </section>
 
         {/* 5. BOOK YOUR FREE HOME SOLAR ASSESSMENT CTA SECTION */}
-        <section
-          className="relative w-full py-28 px-6 sm:px-12 lg:px-20 bg-cover bg-center overflow-hidden"
-          style={{
-            backgroundImage: `url('https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-[#2d5a00]/85 mix-blend-multiply" />
+        {/* BOOK YOUR FREE HOME SOLAR ASSESSMENT CTA */}
+        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
+              alt="Home Solar Assessment"
+              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+            />
 
-          <div className="relative z-10 max-w-[1000px] mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 border border-white/30 rounded-full px-5 py-2 text-xs font-semibold text-white bg-black/20 backdrop-blur-xs">
-              <span className="tracking-widest uppercase font-bold">
-                BOOK NOW
-              </span>
+            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+          </div>
+
+          {/* CONTENT */}
+          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8">
+            {/* BADGE */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
+              <svg
+                className="w-4 h-4 text-[#79B900]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011 1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+              <span>BOOK NOW</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            {/* HEADING */}
+            <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight">
               Book Your Free Home Solar Assessment Today
             </h2>
 
-            <p className="text-white/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            {/* DESCRIPTION */}
+            <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
               Our solar expert visits your home, assesses your electricity
               usage, and gives you a complete cost analysis — completely free,
               no obligation.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            {/* TWO BUTTONS */}
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <button
                 onClick={() => handleOpenQuote("Free Home Solar Assessment")}
-                className="animate-fade-in-left w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#79B900] text-white hover:bg-[#689e00] font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 cursor-pointer text-base"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer animate-fadeInLeft"
               >
                 <span>Free Consultation</span>
-                <ArrowUpRight className="w-5 h-5" />
+
+                <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </button>
 
               <a
                 href="https://wa.me/923141349717"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="animate-fade-in-right w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-[#172217] hover:bg-gray-100 font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-base"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300 shadow-lg animate-fadeInRight"
               >
                 <span>WhatsApp Us Now</span>
-                <ArrowUpRight className="w-5 h-5 text-[#79B900]" />
+
+                <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </a>
             </div>
           </div>

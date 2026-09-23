@@ -809,10 +809,8 @@ export default function IndustrialSolarPage() {
             SECTION 5
             CTA BANNER
         ===================================================== */}
-
         <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
-          {/* BACKGROUND IMAGE */}
-
+          {/* BACKGROUND */}
           <div className="absolute inset-0 z-0">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
@@ -826,15 +824,13 @@ export default function IndustrialSolarPage() {
           </div>
 
           {/* CONTENT */}
-
           <div
             ref={sec5Content.ref}
             className={`relative z-10 max-w-[1100px] mx-auto text-center space-y-8 opacity-0 ${
               sec5Content.isVisible ? "animate-fadeInUp" : ""
             }`}
           >
-            {/* TOP BADGE */}
-
+            {/* BADGE */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
               <svg
                 className="w-4 h-4 text-[#79B900]"
@@ -852,22 +848,19 @@ export default function IndustrialSolarPage() {
               BOOK NOW
             </div>
 
-            {/* HEADLINE */}
-
-            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-black text-white leading-[1.15] tracking-tight">
+            {/* HEADING */}
+            <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight">
               Request An Industrial Solar Energy Audit Free Of Charge
             </h2>
 
             {/* DESCRIPTION */}
-
-            <p className="max-w-[750px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
+            <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
               Our industrial solar team will visit your facility, analyse your
               energy consumption, and deliver a detailed proposal with
               guaranteed savings projections.
             </p>
 
             {/* CTA */}
-
             <div className="pt-4 flex justify-center">
               <a
                 ref={sec5Anchor.ref}
@@ -876,7 +869,7 @@ export default function IndustrialSolarPage() {
                   e.preventDefault();
                   handleOpenQuote();
                 }}
-                className={`group relative inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg opacity-0 ${
+                className={`group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg opacity-0 ${
                   sec5Anchor.isVisible ? "animate-fadeInLeft" : ""
                 }`}
               >

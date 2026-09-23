@@ -632,17 +632,26 @@ export default function EVChargingStationPage() {
         </section>
 
         {/* SECTION 6: CTA Section */}
-        <section
-          className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#172217]/85 via-[#172217]/70 to-[#172217]/60"></div>
+        {/* SECTION 6: CTA */}
+        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
+              alt="EV Charging Station"
+              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+            />
 
-          <div className="relative max-w-[1300px] mx-auto text-center space-y-8 z-10 text-white">
+            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+          </div>
+
+          {/* CONTENT */}
+          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8 text-white">
             <ScrollRevealBlock animationClass="animate-fadeInUp">
-              <div className="inline-flex items-center gap-2 bg-[#79B900]/20 border border-[#79B900]/40 text-[#79B900] px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+              {/* BADGE */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
                 <svg
                   className="w-4 h-4 text-[#79B900]"
                   viewBox="0 0 24 24"
@@ -658,47 +667,47 @@ export default function EVChargingStationPage() {
                   <path d="M16 3v14" />
                   <path d="M6 17l-2 4h16l-2-4" />
                 </svg>
-                <span>Book Now</span>
+                <span>BOOK NOW</span>
               </div>
             </ScrollRevealBlock>
 
             <ScrollRevealBlock animationClass="animate-fadeInUp" delay={150}>
-              <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight uppercase leading-[1.1] max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight leading-[1.15] max-w-[1000px] mx-auto">
                 Get Ahead Of Pakistan&apos;s EV Revolution. Install Your
                 Charging Station Today.
               </h2>
             </ScrollRevealBlock>
 
             <ScrollRevealBlock animationClass="animate-fadeInUp" delay={300}>
-              <p className="text-gray-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
                 Whether for your home, office, or commercial property — our EV
                 charging team will design and install the perfect solution.
               </p>
             </ScrollRevealBlock>
 
-            {/* Buttons Container */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            {/* TWO BUTTONS */}
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <ScrollRevealBlock
                 animationClass="animate-fadeInLeft"
                 delay={450}
-                className="w-full sm:w-auto"
               >
                 <button
                   onClick={handleOpenQuote}
-                  className="w-full px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#172217] font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
                 >
                   <span>Free Consultation</span>
+
                   <svg
-                    className="w-4 h-4"
+                    className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     viewBox="0 0 24 24"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M7 17L17 7M7 7h10v10"
+                      d="M7 17L17 7M17 7H7M17 7V17"
                     />
                   </svg>
                 </button>
@@ -707,26 +716,26 @@ export default function EVChargingStationPage() {
               <ScrollRevealBlock
                 animationClass="animate-fadeInRight"
                 delay={600}
-                className="w-full sm:w-auto"
               >
                 <a
                   href="https://wa.me/923141349717"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full px-8 py-4 bg-[#79B900] hover:bg-[#68a000] text-[#172217] font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300 shadow-lg"
                 >
                   <span>WhatsApp Us Now</span>
+
                   <svg
-                    className="w-4 h-4"
+                    className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     viewBox="0 0 24 24"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M7 17L17 7M7 7h10v10"
+                      d="M7 17L17 7M17 7H7M17 7V17"
                     />
                   </svg>
                 </a>

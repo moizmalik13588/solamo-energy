@@ -369,19 +369,26 @@ export default function SolarBatteryStoragePage() {
         </section>
 
         {/* 4️⃣ SECTION 4: CTA Section — End Load Shedding */}
-        <section
-          className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg')`,
-          }}
-        >
-          {/* Green/Dark Tint Overlay */}
-          <div className="absolute inset-0 bg-[#3b5914]/75 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-black/40"></div>
+        {/* SECTION 4: CTA — END LOAD SHEDDING */}
+        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
+              alt="Solar Battery Storage"
+              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+            />
 
-          <div className="relative max-w-[1300px] mx-auto text-center space-y-8 z-10 text-white">
+            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+          </div>
+
+          {/* CONTENT */}
+          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8 text-white">
+            {/* BADGE */}
             <ScrollRevealBlock animationClass="animate-fadeInUp">
-              <div className="inline-flex items-center gap-2 bg-transparent border border-[#79B900] text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
                 <svg
                   className="w-4 h-4 text-[#79B900]"
                   viewBox="0 0 24 24"
@@ -397,39 +404,42 @@ export default function SolarBatteryStoragePage() {
                   <path d="M16 3v14" />
                   <path d="M6 17l-2 4h16l-2-4" />
                 </svg>
+
                 <span>BOOK NOW</span>
               </div>
             </ScrollRevealBlock>
 
+            {/* HEADING */}
             <ScrollRevealBlock animationClass="animate-fadeInUp" delay={150}>
-              <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight uppercase leading-[1.15] max-w-5xl mx-auto">
+              <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight leading-[1.15] max-w-[1000px] mx-auto">
                 End Load Shedding Once And For All. Install Solar Battery
                 Storage Today.
               </h2>
             </ScrollRevealBlock>
 
-            {/* Button Container */}
+            {/* CTA */}
             <ScrollRevealBlock
-              animationClass="animate-fadeInUp"
+              animationClass="animate-fadeInLeft"
               delay={300}
-              className="flex justify-center pt-2"
+              className="flex justify-center pt-4"
             >
               <button
                 onClick={handleOpenQuote}
-                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#79B900] text-white hover:bg-[#79B900]/20 font-medium text-base sm:text-lg rounded-full transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
               >
                 <span>Free Consultation</span>
+
                 <svg
-                  className="w-4 h-4 text-white"
+                  className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   viewBox="0 0 24 24"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M7 17L17 7M7 7h10v10"
+                    d="M7 17L17 7M17 7H7M17 7V17"
                   />
                 </svg>
               </button>

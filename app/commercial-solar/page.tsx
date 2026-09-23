@@ -583,45 +583,49 @@ export default function CommercialSolarWhoWeServePage() {
         </section>
 
         {/* CTA — GET A CUSTOM COMMERCIAL SOLAR PROPOSAL SECTION */}
-        <section className="relative w-full py-32 px-6 sm:px-12 lg:px-20 overflow-hidden">
-          {/* Background image + dark overlay */}
-          <div className="absolute inset-0">
+        {/* CTA — GET A CUSTOM COMMERCIAL SOLAR PROPOSAL */}
+        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 z-0">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
-              alt="Commercial solar installation"
-              className="w-full h-full object-cover"
+              alt="Commercial Solar Proposal"
+              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
             />
-            <div className="absolute inset-0 bg-black/55" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+
+            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
           </div>
 
-          <div className="relative max-w-4xl mx-auto text-center space-y-8">
-            {/* BOOK NOW pill */}
+          {/* CONTENT */}
+          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8">
+            {/* BADGE */}
             <div
               ref={sec4PillRef as any}
-              className={`inline-flex items-center gap-2 border border-white/50 rounded-full px-5 py-2 text-xs font-semibold text-white bg-white/5 backdrop-blur-sm animate-fade-in-up-base ${
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide animate-fade-in-up-base ${
                 sec4PillVisible ? "revealed" : ""
               }`}
             >
-              <LayoutGrid className="w-4 h-4 text-white" />
-              <span className="tracking-wider uppercase">Book Now</span>
+              <LayoutGrid className="w-4 h-4 text-[#79B900]" />
+              <span className="tracking-wide uppercase">BOOK NOW</span>
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
             <h2
               ref={sec4HeadingRef as any}
-              className={`text-4xl sm:text-[52px] font-black text-white tracking-tight leading-tight animate-fade-in-up-base ${
+              className={`text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight animate-fade-in-up-base ${
                 sec4HeadingVisible ? "revealed" : ""
               }`}
             >
               Get A Custom Commercial Solar Proposal In 48 Hours
             </h2>
 
-            {/* Body */}
+            {/* DESCRIPTION */}
             <p
               ref={sec4ParaRef as any}
               style={{ transitionDelay: "100ms" }}
-              className={`text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed animate-fade-in-up-base ${
+              className={`max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed animate-fade-in-up-base ${
                 sec4ParaVisible ? "revealed" : ""
               }`}
             >
@@ -629,19 +633,20 @@ export default function CommercialSolarWhoWeServePage() {
               that maximises your savings and delivers the fastest possible ROI.
             </p>
 
-            {/* CTA button — opens the quote popup (Note: WhatsApp is handled via floating chat widget separately per original guidelines) */}
+            {/* CTA */}
             <div
               ref={sec4BtnRef as any}
-              className={`pt-2 animate-fade-in-left-base ${
+              className={`pt-4 flex justify-center animate-fade-in-left-base ${
                 sec4BtnVisible ? "revealed" : ""
               }`}
             >
               <button
                 onClick={() => handleOpenQuote("Commercial Inquiry")}
-                className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-white hover:text-[#172217] transition-colors cursor-pointer"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
               >
-                Free Consultation
-                <ArrowUpRight className="w-4 h-4" />
+                <span>Free Consultation</span>
+
+                <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </button>
             </div>
           </div>

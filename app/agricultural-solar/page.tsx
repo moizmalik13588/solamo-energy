@@ -451,18 +451,24 @@ export default function AgriculturalSolarPage() {
         </section>
 
         {/* 4. CTA SECTION — FREE FARM CONSULTATION (Static text/headings, only buttons animate via fadeInLeft/fadeInRight matching spec rules) */}
+        {/* CTA — FREE FARM CONSULTATION */}
         <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* BACKGROUND */}
           <div className="absolute inset-0 z-0">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
               alt="Free Farm Consultation"
               className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
             />
+
             <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+
             <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
           </div>
 
+          {/* CONTENT */}
           <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8">
+            {/* BADGE */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
               <svg
                 className="w-4 h-4 text-[#79B900]"
@@ -477,27 +483,30 @@ export default function AgriculturalSolarPage() {
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                 />
               </svg>
-              book now
+              BOOK NOW
             </div>
 
+            {/* HEADING */}
             <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight">
               Stop Spending On Diesel. Switch To Free Solar Energy For Your Farm
             </h2>
 
+            {/* DESCRIPTION */}
             <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
               Our agricultural solar team understands farming operations. We
               design systems specifically for your land size, water needs, and
               crop requirements.
             </p>
 
-            <div className="pt-6 flex flex-wrap justify-center items-center gap-4">
-              {/* Free consultation button: fadeInLeft */}
+            {/* TWO CTA BUTTONS — RETAINED */}
+            <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
+              {/* FREE CONSULTATION */}
               <div
                 ref={(el) => {
                   if (el) {
                     const obs = new IntersectionObserver(
-                      ([e]) => {
-                        if (e.isIntersecting) {
+                      ([entry]) => {
+                        if (entry.isIntersecting) {
                           el.style.opacity = "1";
                           el.style.transform = "translateX(0)";
                           obs.unobserve(el);
@@ -505,6 +514,7 @@ export default function AgriculturalSolarPage() {
                       },
                       { threshold: 0.1 },
                     );
+
                     obs.observe(el);
                   }
                 }}
@@ -512,9 +522,10 @@ export default function AgriculturalSolarPage() {
               >
                 <button
                   onClick={handleOpenQuote}
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-white hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
                 >
-                  <span>Free consultation</span>
+                  <span>Free Consultation</span>
+
                   <svg
                     className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                     fill="none"
@@ -531,13 +542,13 @@ export default function AgriculturalSolarPage() {
                 </button>
               </div>
 
-              {/* WhatsApp Us Now button: fadeInRight */}
+              {/* WHATSAPP */}
               <div
                 ref={(el) => {
                   if (el) {
                     const obs = new IntersectionObserver(
-                      ([e]) => {
-                        if (e.isIntersecting) {
+                      ([entry]) => {
+                        if (entry.isIntersecting) {
                           el.style.opacity = "1";
                           el.style.transform = "translateX(0)";
                           obs.unobserve(el);
@@ -545,6 +556,7 @@ export default function AgriculturalSolarPage() {
                       },
                       { threshold: 0.1 },
                     );
+
                     obs.observe(el);
                   }
                 }}
@@ -554,9 +566,10 @@ export default function AgriculturalSolarPage() {
                   href="https://wa.me/923141349717"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300 shadow-lg"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300 shadow-lg"
                 >
                   <span>WhatsApp Us Now</span>
+
                   <svg
                     className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                     fill="none"
