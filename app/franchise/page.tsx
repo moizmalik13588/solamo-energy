@@ -529,61 +529,72 @@ export default function FranchisePage() {
           </div>
         </section>
 
-        {/* Section 4 — Bottom CTA banner */}
-        {/* SECTION 4 — BOTTOM CTA */}
-        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
-          {/* BACKGROUND */}
-          <div className="absolute inset-0 z-0">
+        {/* =========================================================
+      SECTION 4 — BOTTOM CTA
+  ========================================================= */}
+        <section className="relative w-full py-24 sm:py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* =========================================================
+        BACKGROUND IMAGE
+    ========================================================= */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
               alt="Solar Franchise"
-              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+              className="w-full h-full object-cover object-center"
             />
 
-            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+            {/* Green Overlay */}
+            <div className="absolute inset-0 bg-[#4d741d]/55" />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+            {/* Subtle Dark Overlay */}
+            <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          {/* CONTENT */}
-          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8 flex flex-col items-center">
+          {/* =========================================================
+        CTA CONTENT
+    ========================================================= */}
+          <div className="relative z-10 w-full max-w-[1250px] mx-auto text-center flex flex-col items-center text-white">
+            {/* =======================================================
+          BOOK NOW BADGE
+      ======================================================= */}
             <ScrollRevealBlock animationClass="animate-fadeInUp">
-              {/* BADGE */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
+              <div className="inline-flex items-center gap-2 border border-white/70 rounded-full px-4 py-1.5 mb-7 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold tracking-wide uppercase">
+                {/* Solar Panel Icon */}
                 <svg
-                  className="w-4 h-4 text-[#79B900]"
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.8"
-                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 4h18v11H3V4z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 4v11m6-11v11M3 9.5h18"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 15v3m6-3v3M6 18h12"
-                  />
+                  <path d="M4 16h16" />
+                  <path d="M5 16l1.5-8h11L19 16" />
+                  <path d="M8 8l1 8" />
+                  <path d="M12 8v8" />
+                  <path d="M16 8l-1 8" />
+                  <path d="M3 19h18" />
+                  <path d="M12 19v2" />
                 </svg>
+
                 <span>BOOK NOW</span>
               </div>
             </ScrollRevealBlock>
 
+            {/* =======================================================
+          HEADING + DESCRIPTION
+      ======================================================= */}
             <ScrollRevealBlock animationClass="animate-fadeInUp" delay={150}>
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white tracking-tight leading-[1.15] max-w-[1000px] mx-auto">
+              <div className="space-y-7">
+                {/* Heading */}
+                <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-black text-white tracking-tight leading-[1.1] max-w-[1200px] mx-auto">
                   Pakistan&apos;s Solar Boom Is Here. Your Franchise Territory
                   Is Waiting.
                 </h2>
 
+                {/* Description */}
                 <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
                   Apply today and our franchise team will be in touch within 48
                   hours to discuss territory availability and next steps.
@@ -591,34 +602,43 @@ export default function FranchisePage() {
               </div>
             </ScrollRevealBlock>
 
-            {/* TWO BUTTONS */}
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            {/* =======================================================
+          TWO CTA BUTTONS
+      ======================================================= */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-9">
+              {/* =====================================================
+            FREE CONSULTATION
+        ===================================================== */}
               <ScrollRevealBlock
                 animationClass="animate-fadeInLeft"
                 delay={300}
               >
                 <button
                   onClick={handleOpenQuote}
-                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-[#79B900] bg-transparent text-white font-semibold text-base sm:text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 cursor-pointer"
                 >
                   <span>Free Consultation</span>
 
                   <svg
-                    className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2.5"
-                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7 17L17 7M17 7H7M17 7V17"
-                    />
+                    <path d="M7 17L17 7" />
+                    <path d="M17 7H7" />
+                    <path d="M17 7V17" />
                   </svg>
                 </button>
               </ScrollRevealBlock>
 
+              {/* =====================================================
+            WHATSAPP
+        ===================================================== */}
               <ScrollRevealBlock
                 animationClass="animate-fadeInRight"
                 delay={450}
@@ -627,22 +647,23 @@ export default function FranchisePage() {
                   href="https://wa.me/923000000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300 shadow-lg"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#79B900] border border-[#79B900] text-[#172217] font-semibold text-base sm:text-lg hover:bg-[#689e00] hover:border-[#689e00] hover:text-white transition-all duration-300"
                 >
                   <span>WhatsApp Us Now</span>
 
                   <svg
-                    className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2.5"
-                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7 17L17 7M17 7H7M17 7V17"
-                    />
+                    <path d="M7 17L17 7" />
+                    <path d="M17 7H7" />
+                    <path d="M17 7V17" />
                   </svg>
                 </a>
               </ScrollRevealBlock>

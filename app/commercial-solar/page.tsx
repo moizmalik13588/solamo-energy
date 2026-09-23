@@ -582,50 +582,82 @@ export default function CommercialSolarWhoWeServePage() {
           </div>
         </section>
 
-        {/* CTA — GET A CUSTOM COMMERCIAL SOLAR PROPOSAL SECTION */}
-        {/* CTA — GET A CUSTOM COMMERCIAL SOLAR PROPOSAL */}
-        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
-          {/* BACKGROUND */}
-          <div className="absolute inset-0 z-0">
+        {/* =========================================================
+      CTA — GET A CUSTOM COMMERCIAL SOLAR PROPOSAL
+  ========================================================= */}
+        <section className="relative w-full py-24 sm:py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* =========================================================
+        BACKGROUND IMAGE
+    ========================================================= */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
               alt="Commercial Solar Proposal"
-              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+              className="w-full h-full object-cover object-center"
             />
 
-            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+            {/* Green Overlay */}
+            <div className="absolute inset-0 bg-[#4d741d]/55" />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+            {/* Subtle Dark Overlay */}
+            <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          {/* CONTENT */}
-          <div className="relative z-10 max-w-[1100px] mx-auto text-center space-y-8">
-            {/* BADGE */}
+          {/* =========================================================
+        CTA CONTENT
+    ========================================================= */}
+          <div className="relative z-10 w-full max-w-[1250px] mx-auto text-center flex flex-col items-center text-white">
+            {/* =======================================================
+          BOOK NOW BADGE
+      ======================================================= */}
             <div
               ref={sec4PillRef as any}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide animate-fade-in-up-base ${
+              className={`inline-flex items-center gap-2 border border-white/70 rounded-full px-4 py-1.5 mb-7 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold tracking-wide uppercase animate-fade-in-up-base ${
                 sec4PillVisible ? "revealed" : ""
               }`}
             >
-              <LayoutGrid className="w-4 h-4 text-[#79B900]" />
-              <span className="tracking-wide uppercase">BOOK NOW</span>
+              {/* Solar Panel Icon */}
+              <svg
+                viewBox="0 0 24 24"
+                className="w-4 h-4 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 16h16" />
+                <path d="M5 16l1.5-8h11L19 16" />
+                <path d="M8 8l1 8" />
+                <path d="M12 8v8" />
+                <path d="M16 8l-1 8" />
+                <path d="M3 19h18" />
+                <path d="M12 19v2" />
+              </svg>
+
+              <span>BOOK NOW</span>
             </div>
 
-            {/* HEADING */}
+            {/* =======================================================
+          HEADING
+      ======================================================= */}
             <h2
               ref={sec4HeadingRef as any}
-              className={`text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight animate-fade-in-up-base ${
+              className={`text-4xl sm:text-5xl lg:text-[60px] font-black text-white leading-[1.1] tracking-tight max-w-[1200px] mx-auto animate-fade-in-up-base ${
                 sec4HeadingVisible ? "revealed" : ""
               }`}
             >
               Get A Custom Commercial Solar Proposal In 48 Hours
             </h2>
 
-            {/* DESCRIPTION */}
+            {/* =======================================================
+          DESCRIPTION
+      ======================================================= */}
             <p
               ref={sec4ParaRef as any}
               style={{ transitionDelay: "100ms" }}
-              className={`max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed animate-fade-in-up-base ${
+              className={`max-w-[780px] mx-auto mt-7 text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed animate-fade-in-up-base ${
                 sec4ParaVisible ? "revealed" : ""
               }`}
             >
@@ -633,20 +665,22 @@ export default function CommercialSolarWhoWeServePage() {
               that maximises your savings and delivers the fastest possible ROI.
             </p>
 
-            {/* CTA */}
+            {/* =======================================================
+          FREE CONSULTATION
+      ======================================================= */}
             <div
               ref={sec4BtnRef as any}
-              className={`pt-4 flex justify-center animate-fade-in-left-base ${
+              className={`pt-9 flex justify-center animate-fade-in-left-base ${
                 sec4BtnVisible ? "revealed" : ""
               }`}
             >
               <button
                 onClick={() => handleOpenQuote("Commercial Inquiry")}
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg cursor-pointer"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-[#79B900] bg-transparent text-white font-semibold text-base sm:text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 cursor-pointer"
               >
                 <span>Free Consultation</span>
 
-                <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
             </div>
           </div>

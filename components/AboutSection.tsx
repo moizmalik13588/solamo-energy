@@ -673,8 +673,8 @@ export default function AboutSection() {
       </section>
 
       {/* =========================================================
-          8. CTA SECTION
-      ========================================================= */}
+      8. CTA SECTION
+  ========================================================= */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -682,29 +682,34 @@ export default function AboutSection() {
           once: true,
         }}
         variants={fadeInUp}
-        className="relative z-0 min-h-[300px] flex items-center justify-center py-[50px] px-6 overflow-hidden rounded-[32px] max-w-[1300px] mx-auto my-20 bg-[#172217]"
+        className="relative w-full py-24 sm:py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]"
       >
-        {/* Background Image */}
-        <Image
-          src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
-          alt="Switch to Solar Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-center -z-20 opacity-80"
-        />
+        {/* =========================================================
+        BACKGROUND IMAGE
+    ========================================================= */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
+            alt="Switch to Solar Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
 
-        {/* Green Overlay */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(121, 185, 0, 0.55) 0%, rgba(23, 34, 23, 0.85) 100%)",
-          }}
-        />
+          {/* Green Overlay */}
+          <div className="absolute inset-0 bg-[#4d741d]/55" />
 
-        {/* CTA Content */}
-        <div className="relative z-10 text-center max-w-3xl mx-auto space-y-6 text-white w-full">
-          {/* Badge */}
+          {/* Very Subtle Dark Overlay */}
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
+
+        {/* =========================================================
+        CTA CONTENT
+    ========================================================= */}
+        <div className="relative z-10 w-full max-w-[1250px] mx-auto text-center flex flex-col items-center text-white">
+          {/* =======================================================
+          BOOK NOW BADGE
+      ======================================================= */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -712,12 +717,34 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="inline-flex items-center gap-2 border border-white/30 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-white bg-white/10"
+            className="inline-flex items-center gap-2 border border-white/70 rounded-full px-4 py-1.5 mb-7 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold tracking-wide uppercase"
           >
-            BOOK NOW
+            {/* Solar Panel Icon */}
+            <svg
+              viewBox="0 0 24 24"
+              className="w-4 h-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 16h16" />
+              <path d="M5 16l1.5-8h11L19 16" />
+              <path d="M8 8l1 8" />
+              <path d="M12 8v8" />
+              <path d="M16 8l-1 8" />
+              <path d="M3 19h18" />
+              <path d="M12 19v2" />
+            </svg>
+
+            <span>BOOK NOW</span>
           </motion.div>
 
-          {/* Heading */}
+          {/* =======================================================
+          HEADING
+      ======================================================= */}
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -725,12 +752,14 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white"
+            className="text-4xl sm:text-5xl lg:text-[60px] font-black tracking-tight text-white leading-[1.1] max-w-[1200px] mx-auto"
           >
             Ready To Make The Switch To Solar? Our Team Is Ready To Help.
           </motion.h2>
 
-          {/* Button */}
+          {/* =======================================================
+          FREE CONSULTATION BUTTON
+      ======================================================= */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -738,14 +767,15 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="pt-4 flex justify-center"
+            className="pt-9 flex justify-center"
           >
             <a
               href="#consultation"
-              className="inline-flex items-center gap-2 bg-[#79B900] text-white hover:bg-white hover:text-black transition-colors rounded-full px-8 py-4 font-semibold text-sm group"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-[#79B900] bg-transparent text-white font-semibold text-base sm:text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300"
             >
-              Free Consultation
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Free Consultation</span>
+
+              <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </motion.div>
         </div>

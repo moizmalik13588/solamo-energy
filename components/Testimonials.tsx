@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Star, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const reviews = [
     {
       name: "Noor Noreen",
@@ -42,133 +40,303 @@ export default function Testimonials() {
     },
   ];
 
+  /*
+   * We duplicate the reviews so the carousel can move smoothly
+   * and then silently reset after reaching the duplicated section.
+   */
+  const carouselReviews = [...reviews, ...reviews];
+
+  /*
+   * Start from the second copy.
+   * This makes both Previous and Next work smoothly.
+   */
+  const [currentIndex, setCurrentIndex] = useState(reviews.length);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const transitionTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    if (!isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    if (!isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
   };
+
+  /*
+   * After reaching either duplicated end,
+   * reset position without animation.
+   */
+  useEffect(() => {
+    if (currentIndex >= reviews.length * 2 - 1) {
+      transitionTimeout.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(reviews.length);
+      }, 600);
+    }
+
+    if (currentIndex <= 0) {
+      transitionTimeout.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(reviews.length);
+      }, 600);
+    }
+
+    return () => {
+      if (transitionTimeout.current) {
+        clearTimeout(transitionTimeout.current);
+      }
+    };
+  }, [currentIndex, reviews.length]);
+
+  /*
+   * Re-enable transition after an instant reset.
+   */
+  useEffect(() => {
+    if (!isTransitioning) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 30);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isTransitioning]);
 
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6">
-        {/* Top Header section matching original site */}
+        {/* Header */}
         <div className="mb-14">
           <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 mb-6 text-sm text-[#172217] font-medium">
-            <span className="w-2 h-2 rounded-full bg-[#79B900]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#79B900]" />
             OUR TESTIMONIALS
           </div>
+
           <h2 className="text-3xl sm:text-5xl font-bold text-[#172217] tracking-tight">
             See What Our <span className="text-[#79B900]">Clients Say</span>
           </h2>
         </div>
 
-        {/* Carousel / Slider Container */}
-        <div className="relative">
+        {/* Carousel */}
+        <div className="relative overflow-hidden">
           <div
-            key={currentIndex}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ease-in-out"
+            className={`testimonial-track flex gap-6 ${
+              isTransitioning
+                ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+                : "transition-none"
+            }`}
+            style={
+              {
+                "--current-index": currentIndex,
+              } as React.CSSProperties
+            }
           >
-            {[0, 1, 2, 3].map((offset) => {
-              const review = reviews[(currentIndex + offset) % reviews.length];
-              return (
-                <div
-                  key={offset}
-                  className="bg-gray-50 border border-gray-200/80 p-6 rounded-2xl shadow-sm flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
-                >
-                  <div>
-                    {/* User header with avatar & Google G icon */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        {review.img ? (
-                          <img
-                            src={review.img}
-                            alt={review.name}
-                            className="w-11 h-11 rounded-full object-cover"
-                          />
-                        ) : (
-                          <div
-                            className={`w-11 h-11 rounded-full ${review.bgGradient} text-white flex items-center justify-center font-bold text-lg`}
-                          >
-                            {review.initial}
-                          </div>
-                        )}
-                        <div>
-                          <div className="flex items-center gap-1">
-                            <h3 className="font-bold text-sm text-[#172217] line-clamp-1">
-                              {review.name}
-                            </h3>
-                            <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10 shrink-0" />
-                          </div>
-                          <p className="text-xs text-gray-500">{review.time}</p>
+            {carouselReviews.map((review, index) => (
+              <div
+                key={`${review.name}-${index}`}
+                className="
+                  testimonial-card
+                  shrink-0
+                  bg-gray-50
+                  border
+                  border-gray-200/80
+                  p-6
+                  rounded-2xl
+                  shadow-sm
+                  flex
+                  flex-col
+                  justify-between
+                  min-h-[280px]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1.5
+                  hover:shadow-lg
+                "
+              >
+                <div>
+                  {/* User Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3 min-w-0">
+                      {review.img ? (
+                        <img
+                          src={review.img}
+                          alt={review.name}
+                          className="w-11 h-11 rounded-full object-cover shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className={`w-11 h-11 rounded-full ${review.bgGradient} text-white flex items-center justify-center font-bold text-lg shrink-0`}
+                        >
+                          {review.initial}
                         </div>
+                      )}
+
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1">
+                          <h3 className="font-bold text-sm text-[#172217] line-clamp-1">
+                            {review.name}
+                          </h3>
+
+                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10 shrink-0" />
+                        </div>
+
+                        <p className="text-xs text-gray-500">{review.time}</p>
                       </div>
-
-                      {/* Google colored G symbol */}
-                      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                        <path
-                          fill="#4285F4"
-                          d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"
-                        />
-                        <path
-                          fill="#34A853"
-                          d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09C3.515 21.3 7.565 24 12.255 24z"
-                        />
-                        <path
-                          fill="#FBBC05"
-                          d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98a11.86 11.86 0 000 10.76l3.98-3.09z"
-                        />
-                        <path
-                          fill="#EA4335"
-                          d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0 7.565 0 3.515 2.7 1.545 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"
-                        />
-                      </svg>
                     </div>
 
-                    {/* Star ratings */}
-                    <div className="flex items-center gap-1 text-amber-400 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
+                    {/* Google Icon */}
+                    <svg
+                      className="w-5 h-5 shrink-0"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="#4285F4"
+                        d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"
+                      />
 
-                    {/* Review text */}
-                    <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
-                      {review.text}
-                    </p>
+                      <path
+                        fill="#34A853"
+                        d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09C3.515 21.3 7.565 24 12.255 24z"
+                      />
+
+                      <path
+                        fill="#FBBC05"
+                        d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98a11.86 11.86 0 000 10.76l3.98-3.09z"
+                      />
+
+                      <path
+                        fill="#EA4335"
+                        d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0 7.565 0 3.515 2.7 1.545 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"
+                      />
+                    </svg>
                   </div>
 
-                  {review.text.length > 100 && (
-                    <span className="text-xs text-gray-400 font-medium mt-3 block">
-                      Read more
-                    </span>
-                  )}
+                  {/* Stars */}
+                  <div className="flex items-center gap-1 text-amber-400 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
+                    {review.text}
+                  </p>
                 </div>
-              );
-            })}
+
+                {/* Read More */}
+                {review.text.length > 100 && (
+                  <span className="text-xs text-gray-400 font-medium mt-3 block">
+                    Read more
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation */}
           <div className="flex items-center justify-end gap-2 mt-8">
+            {/* Previous */}
             <button
+              type="button"
               onClick={prevSlide}
               aria-label="Previous review"
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 active:scale-95 transition text-[#172217]"
+              className="
+                group
+                w-11
+                h-11
+                rounded-full
+                border
+                border-gray-300
+                flex
+                items-center
+                justify-center
+                text-[#172217]
+                hover:bg-[#79B900]
+                hover:border-[#79B900]
+                hover:text-white
+                active:scale-95
+                transition-all
+                duration-300
+              "
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-0.5" />
             </button>
 
+            {/* Next */}
             <button
+              type="button"
               onClick={nextSlide}
               aria-label="Next review"
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 active:scale-95 transition text-[#172217]"
+              className="
+                group
+                w-11
+                h-11
+                rounded-full
+                border
+                border-gray-300
+                flex
+                items-center
+                justify-center
+                text-[#172217]
+                hover:bg-[#79B900]
+                hover:border-[#79B900]
+                hover:text-white
+                active:scale-95
+                transition-all
+                duration-300
+              "
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </button>
           </div>
         </div>
       </div>
+
+      {/* Carousel CSS */}
+      <style jsx>{`
+        .testimonial-track {
+          transform: translateX(
+            calc(-1 * var(--current-index) * (var(--card-width) + 24px))
+          );
+        }
+
+        .testimonial-card {
+          width: var(--card-width);
+        }
+
+        /* Desktop - 4 cards */
+        :global(:root) {
+          --card-width: calc((100% - 72px) / 4);
+        }
+
+        /* Tablet - 2 cards */
+        @media (max-width: 1023px) {
+          .testimonial-track {
+            --card-width: calc((100% - 24px) / 2);
+          }
+        }
+
+        /* Mobile - 1 card */
+        @media (max-width: 767px) {
+          .testimonial-track {
+            --card-width: 100%;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .testimonial-track {
+            transition: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

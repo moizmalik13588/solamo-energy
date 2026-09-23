@@ -806,62 +806,83 @@ export default function IndustrialSolarPage() {
         </section>
 
         {/* =====================================================
-            SECTION 5
-            CTA BANNER
-        ===================================================== */}
-        <section className="relative w-full py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
-          {/* BACKGROUND */}
-          <div className="absolute inset-0 z-0">
+      SECTION 5
+      CTA BANNER
+  ===================================================== */}
+        <section className="relative w-full py-24 sm:py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]">
+          {/* =====================================================
+        BACKGROUND
+    ===================================================== */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <img
               src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
               alt="Industrial Solar Audit"
-              className="w-full h-full object-cover opacity-40 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
+              className="w-full h-full object-cover object-center"
             />
 
-            <div className="absolute inset-0 bg-[#2d5a1e]/75 mix-blend-multiply" />
+            {/* Green Overlay */}
+            <div className="absolute inset-0 bg-[#4d741d]/55" />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#173b18]/80 via-[#2d5a1e]/60 to-[#173b18]/80" />
+            {/* Subtle Dark Overlay */}
+            <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          {/* CONTENT */}
+          {/* =====================================================
+        CONTENT
+    ===================================================== */}
           <div
             ref={sec5Content.ref}
-            className={`relative z-10 max-w-[1100px] mx-auto text-center space-y-8 opacity-0 ${
+            className={`relative z-10 w-full max-w-[1250px] mx-auto text-center flex flex-col items-center text-white opacity-0 ${
               sec5Content.isVisible ? "animate-fadeInUp" : ""
             }`}
           >
-            {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
+            {/* ===================================================
+          BOOK NOW BADGE
+      =================================================== */}
+            <div className="inline-flex items-center gap-2 border border-white/70 rounded-full px-4 py-1.5 mb-7 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold tracking-wide uppercase">
+              {/* Solar Panel Icon */}
               <svg
-                className="w-4 h-4 text-[#79B900]"
+                viewBox="0 0 24 24"
+                className="w-4 h-4 shrink-0"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                />
+                <path d="M4 16h16" />
+                <path d="M5 16l1.5-8h11L19 16" />
+                <path d="M8 8l1 8" />
+                <path d="M12 8v8" />
+                <path d="M16 8l-1 8" />
+                <path d="M3 19h18" />
+                <path d="M12 19v2" />
               </svg>
-              BOOK NOW
+
+              <span>BOOK NOW</span>
             </div>
 
-            {/* HEADING */}
-            <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white leading-[1.15] tracking-tight">
+            {/* ===================================================
+          HEADING
+      =================================================== */}
+            <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-black text-white leading-[1.1] tracking-tight max-w-[1200px] mx-auto">
               Request An Industrial Solar Energy Audit Free Of Charge
             </h2>
 
-            {/* DESCRIPTION */}
-            <p className="max-w-[780px] mx-auto text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
+            {/* ===================================================
+          DESCRIPTION
+      =================================================== */}
+            <p className="max-w-[780px] mx-auto mt-7 text-gray-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
               Our industrial solar team will visit your facility, analyse your
               energy consumption, and deliver a detailed proposal with
               guaranteed savings projections.
             </p>
 
-            {/* CTA */}
-            <div className="pt-4 flex justify-center">
+            {/* ===================================================
+          CTA BUTTON
+      =================================================== */}
+            <div className="pt-9 flex justify-center">
               <a
                 ref={sec5Anchor.ref}
                 href="#consultation"
@@ -869,24 +890,25 @@ export default function IndustrialSolarPage() {
                   e.preventDefault();
                   handleOpenQuote();
                 }}
-                className={`group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/60 text-white font-semibold text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 shadow-lg opacity-0 ${
+                className={`group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-[#79B900] bg-transparent text-white font-semibold text-base sm:text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300 cursor-pointer opacity-0 ${
                   sec5Anchor.isVisible ? "animate-fadeInLeft" : ""
                 }`}
               >
                 <span>Free Consultation</span>
 
                 <svg
-                  className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
-                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                  />
+                  <path d="M7 17L17 7" />
+                  <path d="M17 7H7" />
+                  <path d="M17 7V17" />
                 </svg>
               </a>
             </div>
