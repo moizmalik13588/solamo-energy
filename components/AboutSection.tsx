@@ -255,18 +255,7 @@ export default function AboutSection() {
               If you&apos;re considering solar panel installation in Karachi, I
               hope you&apos;ll let us show you the difference.
             </p>
-
-            <div className="pt-4">
-              <h4 className="font-bold text-[#172217] text-lg">Sahir Gogari</h4>
-
-              <p className="text-sm text-gray-500">
-                Founder and CEO, Solamo Energy
-              </p>
-
-              <p className="text-sm text-gray-500">Dubai, UAE</p>
-            </div>
           </motion.div>
-
           {/* Founder Image */}
           <motion.div
             initial="hidden"
@@ -279,6 +268,7 @@ export default function AboutSection() {
             className="lg:col-span-5"
           >
             <div className="p-3 bg-white border border-gray-200/80 rounded-[28px] shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+              {/* Founder Image */}
               <div className="relative rounded-[20px] overflow-hidden aspect-square sm:aspect-[4/4.2] bg-gray-100 w-full min-h-[350px]">
                 <Image
                   src="https://sahirgogari.com/wp-content/uploads/2025/08/IMG_2969-2-scaled.webp"
@@ -288,6 +278,19 @@ export default function AboutSection() {
                   className="object-cover object-center hover:scale-105 transition-transform duration-700"
                   priority
                 />
+              </div>
+
+              {/* Founder Bio - Below Image on All Screens */}
+              <div className="mt-5 px-2 pb-2">
+                <h4 className="font-bold text-[#172217] text-lg">
+                  Sahir Gogari
+                </h4>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  Founder and CEO, Solamo Energy
+                </p>
+
+                <p className="text-sm text-gray-500">Dubai, UAE</p>
               </div>
             </div>
           </motion.div>
@@ -533,7 +536,7 @@ export default function AboutSection() {
             <motion.div
               key={idx}
               variants={fadeInUp}
-              className="relative h-12 w-32 sm:w-36 flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+              className="relative h-12 w-32 sm:w-36 flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
                 src={brand.src}
