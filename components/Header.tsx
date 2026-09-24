@@ -177,7 +177,7 @@ export default function Header() {
 
               {/* ABOUT */}
               <Link
-                href="/about"
+                href="/about-us"
                 className="relative px-3 xl:px-4 py-2.5 text-base xl:text-lg font-medium text-[#172217] hover:text-[#5f9200] transition-colors duration-300 after:absolute after:left-3 xl:after:left-4 after:right-3 xl:after:right-4 after:bottom-0 after:h-[2px] after:bg-[#79B900] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 About Us
@@ -394,7 +394,7 @@ export default function Header() {
 
               {/* CONTACT */}
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="relative px-3 xl:px-4 py-2.5 text-base xl:text-lg font-medium text-[#172217] hover:text-[#5f9200] transition-colors duration-300 after:absolute after:left-3 xl:after:left-4 after:right-3 xl:after:right-4 after:bottom-0 after:h-[2px] after:bg-[#79B900] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 Contact Us
@@ -453,7 +453,7 @@ export default function Header() {
 
                 {/* ABOUT */}
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="group relative flex items-center min-h-[50px] px-3 text-[17px] sm:text-lg font-medium text-[#172217] hover:text-[#5f9200] transition-colors duration-300"
                   onClick={closeMobileMenu}
                 >
@@ -657,7 +657,7 @@ export default function Header() {
 
                 {/* CONTACT */}
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="group relative flex items-center min-h-[52px] px-3 mt-1 border-t border-gray-100 text-[17px] sm:text-lg font-medium text-[#172217] hover:text-[#5f9200] transition-colors duration-300"
                   onClick={closeMobileMenu}
                 >
