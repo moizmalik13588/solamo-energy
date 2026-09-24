@@ -1,26 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { brandsData, Product } from "@/lib/brand-data";
 import ProductCard from "@/components/ProductCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export default function InvertersPage() {
+function InvertersPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   // Read initial states from URL query parameters safely
   const brandsParam = searchParams.get("brands");
+
   const initialBrands = brandsParam
     ? brandsParam.split(",").filter(Boolean)
     : [];
+
   const initialMin = searchParams.get("min") || "";
   const initialMax = searchParams.get("max") || "";
 
   const [selectedBrands, setSelectedBrands] = useState<string[]>(initialBrands);
+
   const [minPrice, setMinPrice] = useState<string>(initialMin);
+
   const [maxPrice, setMaxPrice] = useState<string>(initialMax);
 
   // State for mobile filter slide-in drawer
@@ -29,18 +33,23 @@ export default function InvertersPage() {
   // Helper function to update URL query parameters dynamically
   const updateUrlParams = (brands: string[], min: string, max: string) => {
     const params = new URLSearchParams();
+
     if (brands.length > 0) {
       params.set("brands", brands.join(","));
     }
+
     if (min) {
       params.set("min", min);
     }
+
     if (max) {
       params.set("max", max);
     }
 
     const queryStr = params.toString();
+
     const newUrl = queryStr ? `/inverters?${queryStr}` : "/inverters";
+
     router.push(newUrl, { scroll: false });
   };
 
@@ -67,24 +76,29 @@ export default function InvertersPage() {
   // Handle brand checkbox toggle selection and update URL instantly
   const handleBrandChange = (brandName: string) => {
     let updatedBrands: string[];
+
     if (selectedBrands.includes(brandName)) {
       updatedBrands = selectedBrands.filter((b) => b !== brandName);
     } else {
       updatedBrands = [...selectedBrands, brandName];
     }
+
     setSelectedBrands(updatedBrands);
+
     updateUrlParams(updatedBrands, minPrice, maxPrice);
   };
 
   // Handle Min Price change and update URL
   const handleMinPriceChange = (val: string) => {
     setMinPrice(val);
+
     updateUrlParams(selectedBrands, val, maxPrice);
   };
 
   // Handle Max Price change and update URL
   const handleMaxPriceChange = (val: string) => {
     setMaxPrice(val);
+
     updateUrlParams(selectedBrands, minPrice, val);
   };
 
@@ -93,25 +107,30 @@ export default function InvertersPage() {
     const brandEntry = Object.values(brandsData).find((brand) =>
       brand?.products?.some((p) => p.id === product.id),
     );
+
     const brandName = brandEntry ? brandEntry.name : "";
 
     const matchesBrand =
       selectedBrands.length === 0 || selectedBrands.includes(brandName);
 
     const price = product.price || 0;
+
     const min = minPrice === "" ? 0 : Number(minPrice);
+
     const max = maxPrice === "" ? Infinity : Number(maxPrice);
+
     const matchesPrice = price >= min && price <= max;
 
     return matchesBrand && matchesPrice;
   });
 
-  // Reusable Filter Content component without scroll restriction
+  // Reusable Filter Content component
   const renderFilterContent = (isMobile = false) => (
     <>
       {isMobile && (
         <div className="flex justify-between items-center mb-6 border-b pb-3">
           <h3 className="font-bold text-xl text-gray-900">Filters</h3>
+
           <button
             onClick={() => setIsMobileFilterOpen(false)}
             className="text-gray-500 hover:text-gray-900 p-1"
@@ -133,9 +152,10 @@ export default function InvertersPage() {
         </div>
       )}
 
-      {/* Brand Filter Section (Scroll hata diya gaya hai taake poori list open aaye) */}
+      {/* Brand Filter Section */}
       <div className="mb-6">
         <h3 className="font-bold text-lg mb-4 text-gray-900">Brands</h3>
+
         <div className="space-y-2.5">
           {availableBrands.map((brandName) => (
             <label
@@ -148,6 +168,7 @@ export default function InvertersPage() {
                 onChange={() => handleBrandChange(brandName)}
                 className="w-4 h-4 rounded border-gray-300 text-lime-600 focus:ring-lime-500"
               />
+
               <span>{brandName}</span>
             </label>
           ))}
@@ -157,6 +178,7 @@ export default function InvertersPage() {
       {/* Price Range Filter Section */}
       <div className="pt-5 border-t border-gray-200">
         <h3 className="font-bold text-lg mb-4 text-gray-900">Price</h3>
+
         <div className="flex items-center gap-2">
           <input
             type="number"
@@ -165,7 +187,9 @@ export default function InvertersPage() {
             onChange={(e) => handleMinPriceChange(e.target.value)}
             className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-lime-500"
           />
+
           <span className="text-gray-400">–</span>
+
           <input
             type="number"
             placeholder="Max"
@@ -183,7 +207,7 @@ export default function InvertersPage() {
       {/* Global Application Header */}
       <Header />
 
-      {/* Main container with proper desktop padding */}
+      {/* Main container */}
       <main className="container mx-auto px-4 md:px-8 pt-16 pb-10 flex-grow">
         {/* Category Badge */}
         <div className="inline-flex items-center gap-2.5 border border-gray-300 rounded-full px-5 py-2 mb-4 text-sm font-semibold tracking-wider text-gray-600 uppercase">
@@ -243,6 +267,7 @@ export default function InvertersPage() {
               className="fixed inset-0 bg-black/50 transition-opacity"
               onClick={() => setIsMobileFilterOpen(false)}
             />
+
             <aside className="fixed inset-y-0 left-0 w-80 bg-[#f4f7f2] p-6 shadow-2xl overflow-y-auto z-50 flex flex-col">
               {renderFilterContent(true)}
             </aside>
@@ -251,7 +276,7 @@ export default function InvertersPage() {
 
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-          {/* Desktop Sidebar (Without scroll, full list visible like live site) */}
+          {/* Desktop Sidebar */}
           <aside className="hidden lg:block bg-[#f4f7f2] p-6 rounded-2xl w-full">
             {renderFilterContent(false)}
           </aside>
@@ -278,5 +303,19 @@ export default function InvertersPage() {
       {/* Global Application Footer */}
       <Footer />
     </div>
+  );
+}
+
+export default function InvertersPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center bg-white">
+          <div className="text-gray-500">Loading...</div>
+        </div>
+      }
+    >
+      <InvertersPageContent />
+    </Suspense>
   );
 }
