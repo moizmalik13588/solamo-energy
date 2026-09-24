@@ -47,12 +47,12 @@ export default function WhyChoose() {
   return (
     <section className="py-20 bg-[#f4f7ee]">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        {/* 3 Columns Grid (Original Website Layout) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Box 0: Dark Green Title Banner */}
-          <div className="bg-[#1c3b1a] text-white p-8 rounded-2xl flex flex-col justify-center min-h-[260px] shadow-sm">
+          {/* Title Banner */}
+          <div className="bg-[#1c3b1a] text-white p-8 rounded-2xl flex flex-col justify-center min-h-[300px] shadow-sm">
             <div className="inline-flex items-center gap-2 border border-[#3b5d38] bg-[#274825] px-3 py-1 rounded-full w-fit mb-6">
               <LayoutGrid className="w-3.5 h-3.5 text-[#79B900]" />
+
               <span className="text-[11px] font-semibold tracking-wider text-white uppercase">
                 WORKING PROCESS
               </span>
@@ -64,27 +64,82 @@ export default function WhyChoose() {
             </h2>
           </div>
 
-          {/* Boxes 1 to 5: White Cards */}
+          {/* Feature Cards */}
           {steps.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-2xl border border-gray-100 flex flex-col justify-between relative shadow-sm hover:shadow-md transition min-h-[260px]"
+              className="
+                group
+                relative
+                bg-white
+                p-8
+                rounded-2xl
+                border
+                border-[#79B900]
+                flex
+                flex-col
+                justify-between
+                min-h-[300px]
+                shadow-sm
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:shadow-lg
+                hover:bg-[#fbfdf8]
+              "
             >
-              {/* Outlined Green Number Top Right */}
-              <span className="absolute top-6 right-8 text-4xl font-extrabold text-transparent stroke-text select-none">
+              {/* Number */}
+              <span
+                className="
+                  absolute
+                  top-6
+                  right-8
+                  text-4xl
+                  font-extrabold
+                  text-transparent
+                  select-none
+                  transition-all
+                  duration-300
+                  group-hover:text-[#79B900]
+                "
+                style={{
+                  WebkitTextStroke: "1.5px #79B900",
+                }}
+              >
                 {item.num}
               </span>
 
-              {/* Icon Circle */}
-              <div className="w-12 h-12 rounded-full border border-[#79B900] flex items-center justify-center mb-6">
-                {item.icon}
+              {/* Icon */}
+              <div
+                className="
+                  w-14
+                  h-14
+                  rounded-full
+                  border
+                  border-[#79B900]
+                  flex
+                  items-center
+                  justify-center
+                  mb-8
+                  shrink-0
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#79B900]
+                  group-hover:scale-105
+                "
+              >
+                <span className="transition-colors duration-300 group-hover:[&>svg]:text-white">
+                  {item.icon}
+                </span>
               </div>
 
-              {/* Title & Description */}
+              {/* Content */}
               <div>
-                <h3 className="text-xl font-bold text-[#172217] mb-2">
+                <h3 className="text-xl font-bold text-[#172217] mb-3 transition-colors duration-300 group-hover:text-[#5f9200]">
                   {item.title}
                 </h3>
+
                 <p className="text-gray-500 text-sm leading-relaxed">
                   {item.desc}
                 </p>
@@ -93,13 +148,6 @@ export default function WhyChoose() {
           ))}
         </div>
       </div>
-
-      {/* Outlined text CSS stroke */}
-      <style jsx>{`
-        .stroke-text {
-          -webkit-text-stroke: 1.5px #79b900;
-        }
-      `}</style>
     </section>
   );
 }

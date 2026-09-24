@@ -9,6 +9,7 @@ import CtaBanner from "@/components/CtaBanner";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ServiceSection from "@/components/ServiceSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <Hero />
       <WhyFounder />
+      <ServiceSection />
       <MarqueeSection />
       <ProductSection />
       <TrustedBrands />

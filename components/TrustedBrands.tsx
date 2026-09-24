@@ -14,137 +14,137 @@ export default function TrustedBrands() {
     {
       name: "Yingli",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/31.png",
-      link: "https://solamoenergy.com/brand/yingli/",
+      link: "/brand/yingli/",
     },
     {
       name: "Volnex",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/29.png",
-      link: "https://solamoenergy.com/brand/volnex/",
+      link: "/brand/volnex/",
     },
     {
       name: "Trina Solar",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/17.png",
-      link: "https://solamoenergy.com/brand/trina-solar/",
+      link: "/brand/trina-solar/",
     },
     {
       name: "Sunwoda",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/28.png",
-      link: "https://solamoenergy.com/brand/sunwoda/",
+      link: "/brand/sunwoda/",
     },
     {
       name: "Sunsynk",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/Solamo-Ecommerce-Brands-logo.png",
-      link: "https://solamoenergy.com/brand/sunsynk/",
+      link: "/brand/sunsynk/",
     },
     {
       name: "Sungrow",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/13.png",
-      link: "https://solamoenergy.com/brand/sungrow/",
+      link: "/brand/sungrow/",
     },
     {
       name: "Solis",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/10.png",
-      link: "https://solamoenergy.com/brand/solis/",
+      link: "/brand/solis/",
     },
     {
       name: "Resin",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/30.png",
-      link: "https://solamoenergy.com/brand/resin/",
+      link: "/brand/resin/",
     },
     {
       name: "PylonTech",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/8-1.png",
-      link: "https://solamoenergy.com/brand/pylontech/",
+      link: "/brand/pylontech/",
     },
     {
       name: "Osda",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/23.png",
-      link: "https://solamoenergy.com/brand/osda/",
+      link: "/brand/osda/",
     },
     {
       name: "Osaka",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/1-1.png",
-      link: "https://solamoenergy.com/brand/osaka/",
+      link: "/brand/osaka/",
     },
     {
       name: "Longi",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/20.png",
-      link: "https://solamoenergy.com/brand/longi/",
+      link: "/brand/longi/",
     },
     {
       name: "Jinko Solar",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/21.png",
-      link: "https://solamoenergy.com/brand/jinko-solar/",
+      link: "/brand/jinko-solar/",
     },
     {
       name: "Jesko",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/27.png",
-      link: "https://solamoenergy.com/brand/jesko/",
+      link: "/brand/jesko/",
     },
     {
       name: "JA Solar",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/18.png",
-      link: "https://solamoenergy.com/brand/ja-solar/",
+      link: "/brand/ja-solar/",
     },
     {
       name: "Itel",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/26.png",
-      link: "https://solamoenergy.com/brand/itel/",
+      link: "/brand/itel/",
     },
     {
       name: "Inverex",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/9.png",
-      link: "https://solamoenergy.com/brand/inverex/",
+      link: "/brand/inverex/",
     },
     {
       name: "Huawei",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/14-1.png",
-      link: "https://solamoenergy.com/brand/huawei/",
+      link: "/brand/huawei/",
     },
     {
       name: "Grow Watt",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/12.png",
-      link: "https://solamoenergy.com/brand/grow-watt/",
+      link: "/brand/grow-watt/",
     },
     {
       name: "Goodwe",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/11.png",
-      link: "https://solamoenergy.com/brand/goodwe/",
+      link: "/brand/goodwe/",
     },
     {
       name: "Genix Green",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/6.png",
-      link: "https://solamoenergy.com/brand/genix-green/",
+      link: "/brand/genix-green/",
     },
     {
       name: "Dynees",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/7.png",
-      link: "https://solamoenergy.com/brand/dynees/",
+      link: "/brand/dynees/",
     },
     {
       name: "Dongjing",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/3.png",
-      link: "https://solamoenergy.com/brand/dongjing/",
+      link: "/brand/dongjing/",
     },
     {
       name: "Cora Dawn",
       img: "https://solamoenergy.com/wp-content/uploads/2026/08/24.png",
-      link: "https://solamoenergy.com/brand/cora-dawn/",
+      link: "/brand/cora-dawn/",
     },
     {
       name: "Canadian Solar",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/19.png",
-      link: "https://solamoenergy.com/brand/canadian-solar/",
+      link: "/brand/canadian-solar/",
     },
     {
       name: "Astronergy",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/15-1.png",
-      link: "https://solamoenergy.com/brand/astronergy/",
+      link: "/brand/astronergy/",
     },
     {
       name: "Aiko",
       img: "https://solamoenergy.com/wp-content/uploads/2026/07/16.png",
-      link: "https://solamoenergy.com/brand/aiko/",
+      link: "/brand/aiko/",
     },
   ];
 
@@ -158,25 +158,25 @@ export default function TrustedBrands() {
 
         {/* Carousel Container */}
         <div className="relative px-8 sm:px-12 flex items-center">
-          {/* Left Arrow Button */}
+          {/* Left Arrow */}
           <button
             onClick={() => swiperRef.current?.swiper?.slidePrev()}
-            aria-label="Previous slide"
+            aria-label="Previous brand"
             className="absolute left-0 z-20 text-[#79B900] hover:scale-110 transition p-1"
           >
             <ChevronLeft className="w-8 h-8 stroke-[3]" />
           </button>
 
-          {/* Right Arrow Button */}
+          {/* Right Arrow */}
           <button
             onClick={() => swiperRef.current?.swiper?.slideNext()}
-            aria-label="Next slide"
+            aria-label="Next brand"
             className="absolute right-0 z-20 text-[#79B900] hover:scale-110 transition p-1"
           >
             <ChevronRight className="w-8 h-8 stroke-[3]" />
           </button>
 
-          {/* Swiper Slider */}
+          {/* Brand Slider */}
           <Swiper
             ref={swiperRef}
             modules={[Autoplay]}
@@ -188,9 +188,18 @@ export default function TrustedBrands() {
             spaceBetween={30}
             slidesPerView={2}
             breakpoints={{
-              640: { slidesPerView: 3, spaceBetween: 40 },
-              768: { slidesPerView: 4, spaceBetween: 50 },
-              1024: { slidesPerView: 5, spaceBetween: 60 },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 60,
+              },
             }}
             className="w-full flex items-center"
           >
@@ -201,14 +210,13 @@ export default function TrustedBrands() {
               >
                 <a
                   href={brand.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-20 w-full flex items-center justify-center filter grayscale hover:grayscale-0 transition duration-300 group"
+                  aria-label={`View ${brand.name} brand`}
+                  className="h-20 w-full flex items-center justify-center transition duration-300 group"
                 >
                   <img
                     src={brand.img}
                     alt={brand.name}
-                    className="max-h-full max-w-[140px] object-contain group-hover:scale-105 transition"
+                    className="max-h-full max-w-[140px] object-contain group-hover:scale-105 transition duration-300"
                   />
                 </a>
               </SwiperSlide>

@@ -18,7 +18,8 @@ const josefinSans = Josefin_Sans({
 
 export const metadata: Metadata = {
   title: "Solar Company in Karachi | Solamo Energy",
-  description: "Trusted solar company in Karachi for home, commercial, industrial and agricultural solar systems, net metering, batteries and EV charging.",
+  description:
+    "Trusted solar company in Karachi for home, commercial, industrial and agricultural solar systems, net metering, batteries and EV charging.",
   icons: {
     icon: "https://solamoenergy.com/wp-content/uploads/2026/05/cropped-For-light-mode-32x32.png",
   },
@@ -30,10 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US" className={`${albertSans.variable} ${josefinSans.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
+    <html
+      lang="en-US"
+      className={`${albertSans.variable} ${josefinSans.variable}`}
+    >
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

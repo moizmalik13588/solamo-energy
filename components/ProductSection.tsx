@@ -12,7 +12,9 @@ export default function ShopSection() {
   const inverterRef = useRef<SwiperRef>(null);
   const batteryRef = useRef<SwiperRef>(null);
 
-  // 1. Solar Panels Data
+  // =========================
+  // SOLAR PANELS
+  // =========================
   const solarPanels = [
     {
       name: "Jesko 620W",
@@ -51,7 +53,9 @@ export default function ShopSection() {
     },
   ];
 
-  // 2. Inverters Data
+  // =========================
+  // INVERTERS
+  // =========================
   const inverters = [
     {
       name: "Sunsynk LifeLynk Lynx Pro 6kW IP65 Hybrid Inverter",
@@ -83,7 +87,9 @@ export default function ShopSection() {
     },
   ];
 
-  // 3. Batteries Data
+  // =========================
+  // BATTERIES
+  // =========================
   const batteries = [
     {
       name: "CN GREEN 16kW",
@@ -115,75 +121,206 @@ export default function ShopSection() {
     },
   ];
 
+  // =========================
+  // CATEGORY SLIDER
+  // =========================
   const renderCategorySlider = (
     title: string,
     items: typeof solarPanels,
-    ref: React.RefObject<SwiperRef | null>,
+    sliderRef: React.RefObject<SwiperRef | null>,
     viewAllLink: string,
   ) => (
-    <div className="mb-14">
-      <h3 className="font-josefin text-2xl font-bold mb-6 text-[#172217]">
+    <div className="mb-12 sm:mb-14">
+      {/* CATEGORY TITLE */}
+      <h3
+        className="
+          font-josefin
+          text-[32px]
+          sm:text-2xl
+          font-bold
+          mb-5
+          sm:mb-6
+          text-[#172217]
+          text-center
+          sm:text-left
+          px-6
+          sm:px-12
+        "
+      >
         {title}
       </h3>
 
-      {/* Relative wrapper with padding so arrows stay outside cards */}
-      <div className="relative px-6 sm:px-10">
-        {/* Left Arrow */}
+      {/* SLIDER */}
+      <div className="relative w-full">
+        {/* LEFT ARROW */}
         <button
-          onClick={() => ref.current?.swiper?.slidePrev()}
+          onClick={() => sliderRef.current?.swiper?.slidePrev()}
           aria-label="Previous slide"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 text-[#79B900] hover:scale-110 transition bg-white rounded-full p-2 shadow-md border border-gray-200"
+          className="
+            absolute
+            left-1
+            sm:left-3
+            top-1/2
+            -translate-y-1/2
+            z-30
+            text-[#79B900]
+            hover:text-[#5f9200]
+            transition
+            p-0
+          "
         >
-          <ChevronLeft className="w-6 h-6 stroke-[3]" />
+          <ChevronLeft className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2.5]" />
         </button>
 
-        {/* Right Arrow */}
+        {/* RIGHT ARROW */}
         <button
-          onClick={() => ref.current?.swiper?.slideNext()}
+          onClick={() => sliderRef.current?.swiper?.slideNext()}
           aria-label="Next slide"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 text-[#79B900] hover:scale-110 transition bg-white rounded-full p-2 shadow-md border border-gray-200"
+          className="
+            absolute
+            right-1
+            sm:right-3
+            top-1/2
+            -translate-y-1/2
+            z-30
+            text-[#79B900]
+            hover:text-[#5f9200]
+            transition
+            p-0
+          "
         >
-          <ChevronRight className="w-6 h-6 stroke-[3]" />
+          <ChevronRight className="w-7 h-7 sm:w-8 sm:h-8 stroke-[2.5]" />
         </button>
 
         <Swiper
-          ref={ref}
-          spaceBetween={20}
-          slidesPerView={1}
+          ref={sliderRef}
+          spaceBetween={6}
+          slidesPerView={2}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 12,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
           }}
-          className="py-2"
+          className="w-full py-1"
         >
           {items.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <div className="border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between bg-white h-[380px]">
+              {/* PRODUCT CARD */}
+              <div
+                className="
+                  border
+                  border-gray-200
+                  rounded-[5px]
+                  p-[10px]
+                  sm:p-4
+                  bg-white
+                  flex
+                  flex-col
+                  justify-between
+                  h-[327px]
+                  sm:h-[360px]
+                  lg:h-[380px]
+                  transition
+                  hover:shadow-md
+                "
+              >
+                {/* PRODUCT CONTENT */}
                 <div>
-                  <div className="h-36 relative mb-3 flex items-center justify-center">
+                  {/* IMAGE */}
+                  <div
+                    className="
+                      h-[128px]
+                      sm:h-36
+                      lg:h-[190px]
+                      relative
+                      mb-3
+                      flex
+                      items-center
+                      justify-center
+                    "
+                  >
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="max-h-full max-w-full object-contain"
+                      className="
+                        max-h-full
+                        max-w-full
+                        object-contain
+                      "
                     />
                   </div>
-                  <h4 className="font-medium text-gray-800 text-sm mb-2 line-clamp-2 h-10">
+
+                  {/* PRODUCT NAME */}
+                  <h4
+                    className="
+                      font-medium
+                      text-[#172217]
+                      text-[14px]
+                      sm:text-sm
+                      leading-[1.3]
+                      mb-2
+                      line-clamp-2
+                      h-[38px]
+                    "
+                  >
                     {item.name}
                   </h4>
                 </div>
 
+                {/* PRICE + BUTTON */}
                 <div>
-                  <div className="flex items-center justify-between border-t border-gray-100 pt-3 mb-3">
-                    <span className="text-xs font-bold text-gray-700">
+                  {/* PRICE */}
+                  <div
+                    className="
+                      flex
+                      items-center
+                      justify-between
+                      border-t
+                      border-gray-100
+                      pt-2.5
+                      mb-2.5
+                      gap-1
+                    "
+                  >
+                    <span className="text-[14px] sm:text-xs font-bold text-[#172217]">
                       Price
                     </span>
-                    <span className="text-base font-bold text-[#79B900]">
+
+                    <span
+                      className="
+                        text-[14px]
+                        sm:text-base
+                        font-bold
+                        text-[#79B900]
+                        whitespace-nowrap
+                      "
+                    >
                       Rs{item.price}
                     </span>
                   </div>
+
+                  {/* SEE DETAILS */}
                   <Link
                     href={item.link}
-                    className="block w-full text-center bg-[#79B900] text-white font-semibold py-2.5 rounded-lg text-xs hover:bg-[#5f9200] transition"
+                    className="
+                      block
+                      w-full
+                      text-center
+                      bg-[#79B900]
+                      text-white
+                      font-semibold
+                      py-2.5
+                      rounded-[6px]
+                      text-[11px]
+                      sm:text-xs
+                      hover:bg-[#5f9200]
+                      transition
+                    "
                   >
                     See Details
                   </Link>
@@ -194,51 +331,124 @@ export default function ShopSection() {
         </Swiper>
       </div>
 
+      {/* VIEW ALL */}
       <div className="text-center mt-6">
         <Link
           href={viewAllLink}
-          className="inline-flex items-center gap-2 bg-[#79B900] text-white font-bold px-8 py-3 rounded-lg text-sm hover:bg-[#5f9200] transition shadow-md"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            gap-2
+            bg-[#79B900]
+            text-white
+            font-bold
+            px-7
+            sm:px-8
+            py-3
+            rounded-[6px]
+            text-sm
+            hover:bg-[#5f9200]
+            transition
+            shadow-sm
+          "
         >
-          View All Products <ArrowUpRight className="w-4 h-4" />
+          View All Products
+          <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
     </div>
   );
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
-      <div className="max-w-[1300px] mx-auto px-4">
-        {/* TOP ABOUT & STRIP HEADER */}
-        <div className="flex flex-col items-center justify-center text-center mb-12">
-          <div className="inline-flex items-center gap-2 border border-[#d8e3c5] bg-[#f7f9f2] text-[#172217] text-xs font-semibold uppercase px-4 py-1.5 rounded-full mb-4 tracking-wider">
+    <section className="py-10 sm:py-12 bg-white overflow-hidden">
+      {/* FULL WIDTH CONTAINER */}
+      <div className="w-full px-0">
+        {/* =========================
+            TOP ABOUT & STRIP HEADER
+        ========================= */}
+        <div className="flex flex-col items-center justify-center text-center mb-12 px-6 sm:px-12">
+          {/* ABOUT US BADGE */}
+          <div
+            className="
+              inline-flex
+              items-center
+              justify-center
+              gap-2
+              border
+              border-gray-300
+              rounded-full
+              px-4
+              py-1.5
+              mb-4
+              text-sm
+              text-[#172217]
+              font-medium
+            "
+          >
+            {/* SOLAR PANEL ICON */}
             <svg
-              className="w-4 h-4 text-[#79B900]"
-              fill="currentColor"
               viewBox="0 0 24 24"
+              className="w-4 h-4 text-[#79B900] shrink-0"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
             >
-              <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" />
+              <path d="M4 16h16" />
+              <path d="M5 16l1.5-8h11L19 16" />
+              <path d="M8 8l1 8" />
+              <path d="M12 8v8" />
+              <path d="M16 8l-1 8" />
+              <path d="M3 19h18" />
+              <path d="M12 19v2" />
             </svg>
+
             <span>ABOUT US</span>
           </div>
 
-          <h2 className="font-josefin text-3xl sm:text-5xl font-bold tracking-tight text-[#172217] uppercase">
+          {/* HEADING */}
+          <h2
+            className="
+              font-josefin
+              text-3xl
+              sm:text-5xl
+              font-bold
+              tracking-tight
+              text-[#172217]
+              uppercase
+              text-center
+            "
+          >
             WHY SOLAR NOW <span className="text-[#79B900]">STATS STRIP</span>
           </h2>
         </div>
 
-        {/* ALL CATEGORY SLIDERS */}
+        {/* =========================
+            SOLAR PANELS
+        ========================= */}
         {renderCategorySlider(
           "Solar Panels",
           solarPanels,
           panelRef,
           "/solar-panels",
         )}
+
+        {/* =========================
+            INVERTERS
+        ========================= */}
         {renderCategorySlider(
           "Inverters",
           inverters,
           inverterRef,
           "/inverters",
         )}
+
+        {/* =========================
+            BATTERIES
+        ========================= */}
         {renderCategorySlider("Batteries", batteries, batteryRef, "/batteries")}
       </div>
     </section>

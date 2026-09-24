@@ -20,6 +20,7 @@ export default function Hero() {
 
     const timer500 = setInterval(() => {
       start500 += 10;
+
       if (start500 >= end500) {
         setCount500(end500);
         clearInterval(timer500);
@@ -35,6 +36,7 @@ export default function Hero() {
 
     const timer5 = setInterval(() => {
       start5 += 1;
+
       if (start5 >= end5) {
         setCount5(end5);
         clearInterval(timer5);
@@ -69,13 +71,14 @@ export default function Hero() {
             console.error("Hero video failed to load:", e.currentTarget.error)
           }
         />
+
         <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      {/* Main Content Area with Smooth Slide-Up Animation */}
+      {/* Main Content Area */}
       <div className="relative z-10 max-w-[1300px] mx-auto px-6 w-full my-auto py-12">
         <div
-          className={`max-w-3xl transition-all duration-1000 ease-out transform ${
+          className={`max-w-3xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-1000 ease-out transform ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -83,59 +86,71 @@ export default function Hero() {
             <span className="text-[#79B900]">Pakistan's</span> Most Trusted{" "}
             Solar Energy Company
           </h1>
+
           <p className="text-sm sm:text-base text-gray-200 mb-6 max-w-2xl leading-relaxed">
             Cut Your Electricity Bills by Up to 80%. Premium Solar Solutions for
             Homes, Businesses, Farms & Industries Across Karachi
           </p>
 
-          <div className="h-px w-full max-w-md bg-white/25 mb-6" />
+          <div className="h-px w-full max-w-md bg-white/25 mb-6 mx-auto lg:mx-0" />
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
             <Link
               href="/free-quote"
               className="inline-flex items-center gap-2 bg-[#79B900] text-white font-bold py-3.5 px-8 rounded-full shadow-lg hover:bg-[#5f9200] transition text-base"
             >
-              Get Free Quote <ArrowUpRight className="w-5 h-5" />
+              Get Free Quote
+              <ArrowUpRight className="w-5 h-5" />
             </Link>
+
             <Link
               href="https://wa.me/923141349717"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-transparent border-2 border-[#79B900] text-white font-bold py-3 px-8 rounded-full hover:bg-[#79B900]/10 transition text-base"
             >
-              Whatsapp Now <ArrowUpRight className="w-5 h-5" />
+              Whatsapp Now
+              <ArrowUpRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Counters Box Strip with Delayed Smooth Slide-Up Animation */}
+      {/* Counters Box */}
       <div className="relative z-10 max-w-[1300px] mx-auto px-6 w-full">
         <div
-          className={`max-w-3xl border border-[#79B900]/70 bg-black/30 backdrop-blur-sm rounded-2xl grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#79B900]/40 px-6 py-5 transition-all duration-1000 delay-300 ease-out transform ${
+          className={`w-full lg:w-fit lg:ml-0 lg:mr-auto border border-[#79B900]/70 bg-black/30 backdrop-blur-sm rounded-2xl grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#79B900]/40 px-6 py-5 transition-all duration-1000 delay-300 ease-out transform ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="text-center sm:text-left sm:px-6 first:pl-0 pb-3 sm:pb-0">
+          {/* 500+ */}
+          <div className="text-center sm:px-6 first:pl-0 pb-3 sm:pb-0">
             <div className="text-3xl sm:text-5xl font-normal text-white tracking-tight">
               {count500}+
             </div>
+
             <div className="text-sm sm:text-base text-gray-300 mt-1 font-medium">
               Installations Completed
             </div>
           </div>
+
+          {/* 5+ */}
           <div className="text-center sm:px-6 py-3 sm:py-0">
             <div className="text-3xl sm:text-5xl font-normal text-white tracking-tight">
               {count5}+
             </div>
+
             <div className="text-sm sm:text-base text-gray-300 mt-1 font-medium">
               Year Installation Warranty
             </div>
           </div>
-          <div className="text-center sm:text-left sm:px-6 last:pr-0 pt-3 sm:pt-0">
+
+          {/* 1# */}
+          <div className="text-center sm:px-6 last:pr-0 pt-3 sm:pt-0">
             <div className="text-3xl sm:text-5xl font-normal text-white tracking-tight">
               {count1}#
             </div>
+
             <div className="text-sm sm:text-base text-gray-300 mt-1 font-medium">
               Karachi's #1 Solar Partner
             </div>
