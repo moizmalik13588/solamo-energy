@@ -458,15 +458,27 @@ export default function AboutSection() {
           {/* Mission */}
           <motion.div
             variants={fadeInLeft}
-            className="relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
+            className="group relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
           >
             <span className="text-4xl font-light text-[#79B900] select-none">
               01
             </span>
 
             <div>
-              <div className="w-14 h-14 rounded-full border border-[#79B900] flex items-center justify-center text-[#79B900] mb-6">
-                <Target className="w-6 h-6" />
+              <div
+                className="
+    w-14 h-14
+    rounded-full
+    border border-[#79B900]
+    flex items-center justify-center
+    text-[#79B900]
+    mb-6
+    transition-all duration-300
+    group-hover:bg-[#79B900]
+    group-hover:scale-105
+  "
+              >
+                <Target className="w-6 h-6 transition-colors duration-300 group-hover:text-white" />
               </div>
 
               <h3 className="text-2xl font-bold text-[#172217] mb-3">
@@ -484,15 +496,27 @@ export default function AboutSection() {
           {/* Vision */}
           <motion.div
             variants={fadeInRight}
-            className="relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
+            className="group relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
           >
             <span className="text-4xl font-light text-[#79B900] select-none">
               02
             </span>
 
             <div>
-              <div className="w-14 h-14 rounded-full border border-[#79B900] flex items-center justify-center text-[#79B900] mb-6">
-                <Eye className="w-6 h-6" />
+              <div
+                className="
+    w-14 h-14
+    rounded-full
+    border border-[#79B900]
+    flex items-center justify-center
+    text-[#79B900]
+    mb-6
+    transition-all duration-300
+    group-hover:bg-[#79B900]
+    group-hover:scale-105
+  "
+              >
+                <Eye className="w-6 h-6 transition-colors duration-300 group-hover:text-white" />
               </div>
 
               <h3 className="text-2xl font-bold text-[#172217] mb-3">Vision</h3>
