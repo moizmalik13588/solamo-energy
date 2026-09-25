@@ -89,14 +89,9 @@ export default function AboutSection() {
     },
   ];
 
-  /*
-   * IMPORTANT:
-   * Explicitly typing these objects as Framer Motion Variants
-   * fixes the TypeScript error caused by `ease: "easeOut"`.
-   *
-   * Cubic-bezier easing is used here so it remains compatible
-   * with current Framer Motion types.
-   */
+  /* =========================================================
+     ANIMATIONS
+  ========================================================= */
 
   const fadeInUp: Variants = {
     hidden: {
@@ -108,7 +103,7 @@ export default function AboutSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
       },
     },
   };
@@ -123,7 +118,7 @@ export default function AboutSection() {
       x: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
       },
     },
   };
@@ -138,7 +133,7 @@ export default function AboutSection() {
       x: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
       },
     },
   };
@@ -153,7 +148,7 @@ export default function AboutSection() {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: "easeOut",
       },
     },
   };
@@ -175,7 +170,7 @@ export default function AboutSection() {
       {/* =========================================================
           1. FOUNDER MESSAGE SECTION
       ========================================================= */}
-      <section className="py-20 px-6 max-w-[1300px] mx-auto">
+      <section className="py-[55px] sm:py-[70px] md:py-[90px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto">
         {/* Section Label */}
         <motion.div
           initial="hidden"
@@ -185,13 +180,28 @@ export default function AboutSection() {
             margin: "-60px",
           }}
           variants={fadeInUp}
-          className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase text-[#172217]"
+          className="
+            inline-flex
+            items-center
+            gap-2
+            border
+            border-[#d8d8d8]
+            rounded-full
+            px-4
+            py-1.5
+            mb-6
+            text-xs
+            font-semibold
+            tracking-wider
+            uppercase
+            text-[#172217]
+          "
         >
           <span className="w-2 h-2 rounded-full bg-[#79B900]" />
           ABOUT CEO
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Founder Text */}
           <motion.div
             initial="hidden"
@@ -201,7 +211,7 @@ export default function AboutSection() {
               margin: "-60px",
             }}
             variants={fadeInLeft}
-            className="lg:col-span-7 space-y-6 text-[#4a5568] text-base leading-relaxed"
+            className="lg:col-span-7 space-y-5 sm:space-y-6 text-[#4a5568] text-base leading-relaxed"
           >
             <h2 className="text-3xl sm:text-5xl font-bold text-[#172217] tracking-tight">
               A Message From Our <br />
@@ -256,6 +266,7 @@ export default function AboutSection() {
               hope you&apos;ll let us show you the difference.
             </p>
           </motion.div>
+
           {/* Founder Image */}
           <motion.div
             initial="hidden"
@@ -267,9 +278,8 @@ export default function AboutSection() {
             variants={scaleIn}
             className="lg:col-span-5"
           >
-            <div className="p-3 bg-white border border-gray-200/80 rounded-[28px] shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-              {/* Founder Image */}
-              <div className="relative rounded-[20px] overflow-hidden aspect-square sm:aspect-[4/4.2] bg-gray-100 w-full min-h-[350px]">
+            <div className="p-3 bg-white border border-[#d8d8d8] rounded-[15px] shadow-none hover:shadow-md transition-shadow duration-300">
+              <div className="relative rounded-[12px] overflow-hidden aspect-square sm:aspect-[4/4.2] bg-gray-100 w-full min-h-[300px] sm:min-h-[350px]">
                 <Image
                   src="https://sahirgogari.com/wp-content/uploads/2025/08/IMG_2969-2-scaled.webp"
                   alt="Sahir Gogari - Founder & CEO Solamo Energy"
@@ -280,7 +290,7 @@ export default function AboutSection() {
                 />
               </div>
 
-              {/* Founder Bio - Below Image on All Screens */}
+              {/* Founder Bio */}
               <div className="mt-5 px-2 pb-2">
                 <h4 className="font-bold text-[#172217] text-lg">
                   Sahir Gogari
@@ -300,7 +310,7 @@ export default function AboutSection() {
       {/* =========================================================
           2. OUR TEAM SECTION
       ========================================================= */}
-      <section className="py-20 px-6 max-w-[1300px] mx-auto border-t border-gray-100">
+      <section className="py-[55px] sm:py-[70px] md:py-[90px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto border-t border-gray-100">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -309,9 +319,9 @@ export default function AboutSection() {
             margin: "-60px",
           }}
           variants={fadeInUp}
-          className="mb-14"
+          className="mb-10 sm:mb-14"
         >
-          <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase text-[#172217]">
+          <div className="inline-flex items-center gap-2 border border-[#d8d8d8] rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase text-[#172217]">
             <span className="w-2 h-2 rounded-full bg-[#79B900]" />
             OUR TEAM
           </div>
@@ -330,15 +340,28 @@ export default function AboutSection() {
             once: true,
             margin: "-40px",
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-5"
         >
           {teamMembers.map((member, idx) => (
             <motion.div
               key={idx}
               variants={fadeInUp}
-              className="bg-[#FAFAFA] border border-gray-200/80 rounded-[28px] overflow-hidden flex flex-col shadow-sm group hover:shadow-lg transition-all duration-300"
+              className="
+                bg-white
+                border
+                border-[#d8d8d8]
+                rounded-[15px]
+                overflow-hidden
+                flex
+                flex-col
+                shadow-none
+                group
+                hover:shadow-md
+                transition-all
+                duration-300
+              "
             >
-              <div className="relative aspect-[4/4.2] w-full bg-[#F3F4F1] overflow-hidden min-h-[300px]">
+              <div className="relative aspect-[4/4.2] w-full bg-[#F3F4F1] overflow-hidden min-h-[280px] sm:min-h-[300px]">
                 <Image
                   src={member.img}
                   alt={member.name}
@@ -348,7 +371,7 @@ export default function AboutSection() {
                 />
               </div>
 
-              <div className="p-6 bg-white border-t border-gray-100 flex flex-col justify-center min-h-[100px]">
+              <div className="p-5 sm:p-6 bg-white border-t border-gray-100 flex flex-col justify-center min-h-[100px]">
                 <h3 className="font-bold text-xl text-[#172217]">
                   {member.name}
                 </h3>
@@ -363,7 +386,7 @@ export default function AboutSection() {
       {/* =========================================================
           3. OUR STORY SECTION
       ========================================================= */}
-      <section className="py-20 px-6 max-w-[1300px] mx-auto border-t border-gray-100">
+      <section className="py-[55px] sm:py-[70px] md:py-[90px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto border-t border-gray-100">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -372,13 +395,13 @@ export default function AboutSection() {
             margin: "-60px",
           }}
           variants={fadeInUp}
-          className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase text-[#172217]"
+          className="inline-flex items-center gap-2 border border-[#d8d8d8] rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase text-[#172217]"
         >
           <span className="w-2 h-2 rounded-full bg-[#79B900]" />
           ABOUT US
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Story Text */}
           <motion.div
             initial="hidden"
@@ -388,7 +411,7 @@ export default function AboutSection() {
               margin: "-60px",
             }}
             variants={fadeInLeft}
-            className="lg:col-span-6 space-y-6 text-[#4a5568] leading-relaxed"
+            className="lg:col-span-6 space-y-5 sm:space-y-6 text-[#4a5568] leading-relaxed"
           >
             <h2 className="text-3xl sm:text-5xl font-bold text-[#172217] tracking-tight">
               OUR STORY
@@ -428,7 +451,7 @@ export default function AboutSection() {
             variants={scaleIn}
             className="lg:col-span-6"
           >
-            <div className="relative h-80 sm:h-96 rounded-[24px] overflow-hidden shadow-sm bg-gray-100 w-full">
+            <div className="relative h-80 sm:h-96 rounded-[15px] overflow-hidden shadow-none bg-gray-100 w-full">
               <Image
                 src="https://solamoenergy.com/wp-content/uploads/2026/05/IMages-1.png"
                 alt="Solamo Energy Our Story visual"
@@ -444,7 +467,7 @@ export default function AboutSection() {
       {/* =========================================================
           4. MISSION & VISION
       ========================================================= */}
-      <section className="py-16 px-6 max-w-[1300px] mx-auto">
+      <section className="py-[55px] sm:py-[70px] md:py-[80px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -453,12 +476,30 @@ export default function AboutSection() {
             once: true,
             margin: "-50px",
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-5"
         >
           {/* Mission */}
           <motion.div
             variants={fadeInLeft}
-            className="group relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
+            className="
+              group
+              relative
+              p-6
+              sm:p-7
+              md:p-8
+              rounded-[15px]
+              border
+              border-[#d8d8d8]
+              bg-white
+              shadow-none
+              flex
+              flex-col
+              justify-between
+              min-h-[205px]
+              hover:shadow-md
+              transition-all
+              duration-300
+            "
           >
             <span className="text-4xl font-light text-[#79B900] select-none">
               01
@@ -467,16 +508,21 @@ export default function AboutSection() {
             <div>
               <div
                 className="
-    w-14 h-14
-    rounded-full
-    border border-[#79B900]
-    flex items-center justify-center
-    text-[#79B900]
-    mb-6
-    transition-all duration-300
-    group-hover:bg-[#79B900]
-    group-hover:scale-105
-  "
+                  w-14
+                  h-14
+                  rounded-full
+                  border
+                  border-[#79B900]
+                  flex
+                  items-center
+                  justify-center
+                  text-[#79B900]
+                  mb-6
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#79B900]
+                  group-hover:scale-105
+                "
               >
                 <Target className="w-6 h-6 transition-colors duration-300 group-hover:text-white" />
               </div>
@@ -496,7 +542,25 @@ export default function AboutSection() {
           {/* Vision */}
           <motion.div
             variants={fadeInRight}
-            className="group relative p-10 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col justify-between min-h-[260px] hover:shadow-md transition-shadow"
+            className="
+              group
+              relative
+              p-6
+              sm:p-7
+              md:p-8
+              rounded-[15px]
+              border
+              border-[#d8d8d8]
+              bg-white
+              shadow-none
+              flex
+              flex-col
+              justify-between
+              min-h-[205px]
+              hover:shadow-md
+              transition-all
+              duration-300
+            "
           >
             <span className="text-4xl font-light text-[#79B900] select-none">
               02
@@ -505,16 +569,21 @@ export default function AboutSection() {
             <div>
               <div
                 className="
-    w-14 h-14
-    rounded-full
-    border border-[#79B900]
-    flex items-center justify-center
-    text-[#79B900]
-    mb-6
-    transition-all duration-300
-    group-hover:bg-[#79B900]
-    group-hover:scale-105
-  "
+                  w-14
+                  h-14
+                  rounded-full
+                  border
+                  border-[#79B900]
+                  flex
+                  items-center
+                  justify-center
+                  text-[#79B900]
+                  mb-6
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#79B900]
+                  group-hover:scale-105
+                "
               >
                 <Eye className="w-6 h-6 transition-colors duration-300 group-hover:text-white" />
               </div>
@@ -534,7 +603,7 @@ export default function AboutSection() {
       {/* =========================================================
           5. EQUIPMENT PARTNERS / BRANDS
       ========================================================= */}
-      <section className="py-16 px-6 max-w-[1300px] mx-auto text-center">
+      <section className="py-[55px] sm:py-[70px] md:py-[80px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto text-center">
         <motion.h3
           initial="hidden"
           whileInView="visible"
@@ -542,7 +611,7 @@ export default function AboutSection() {
             once: true,
           }}
           variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-bold text-[#172217] mb-12"
+          className="text-2xl sm:text-3xl font-bold text-[#172217] mb-10 sm:mb-12"
         >
           We Install Equipment From
         </motion.h3>
@@ -554,13 +623,25 @@ export default function AboutSection() {
           viewport={{
             once: true,
           }}
-          className="flex flex-wrap items-center justify-center gap-8 sm:gap-14"
+          className="flex flex-wrap items-center justify-center gap-7 sm:gap-10 md:gap-14"
         >
           {brandLogos.map((brand, idx) => (
             <motion.div
               key={idx}
               variants={fadeInUp}
-              className="relative h-12 w-32 sm:w-36 flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
+              className="
+                relative
+                h-12
+                w-32
+                sm:w-36
+                flex
+                items-center
+                justify-center
+                opacity-90
+                hover:opacity-100
+                transition-opacity
+                duration-300
+              "
             >
               <Image
                 src={brand.src}
@@ -577,7 +658,7 @@ export default function AboutSection() {
       {/* =========================================================
           6. OUR VALUES
       ========================================================= */}
-      <section className="py-20 px-6 max-w-[1300px] mx-auto">
+      <section className="py-[55px] sm:py-[70px] md:py-[90px] px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -585,7 +666,7 @@ export default function AboutSection() {
             once: true,
           }}
           variants={fadeInUp}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16"
         >
           <h2 className="text-3xl sm:text-5xl font-bold text-[#172217] tracking-tight">
             OUR VALUES
@@ -600,7 +681,7 @@ export default function AboutSection() {
             once: true,
             margin: "-40px",
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6"
         >
           {values.map((val, idx) => {
             const IconComponent = val.icon;
@@ -609,10 +690,41 @@ export default function AboutSection() {
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                className="p-8 rounded-[28px] border border-gray-200 bg-white shadow-sm flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="
+                  p-6
+                  md:p-7
+                  rounded-[15px]
+                  border
+                  border-[#d8d8d8]
+                  bg-white
+                  shadow-none
+                  flex
+                  flex-col
+                  items-center
+                  text-center
+                  hover:shadow-md
+                  hover:-translate-y-1
+                  transition-all
+                  duration-300
+                "
               >
-                <div className="w-16 h-16 rounded-full border border-[#79B900] flex items-center justify-center text-[#79B900] mb-6">
-                  <IconComponent className="w-7 h-7" />
+                <div
+                  className="
+                    w-14
+                    h-14
+                    rounded-full
+                    border
+                    border-[#79B900]
+                    flex
+                    items-center
+                    justify-center
+                    text-[#79B900]
+                    mb-6
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <IconComponent className="w-6 h-6" />
                 </div>
 
                 <h3 className="font-bold text-lg text-[#172217] mb-3">
@@ -631,7 +743,7 @@ export default function AboutSection() {
       {/* =========================================================
           7. STATS BANNER
       ========================================================= */}
-      <section className="bg-[#79B900] text-white py-16 px-6">
+      <section className="bg-[#79B900] text-white py-14 sm:py-16 px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -639,7 +751,20 @@ export default function AboutSection() {
             once: true,
           }}
           variants={staggerContainer}
-          className="max-w-[1300px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/20"
+          className="
+            max-w-[1300px]
+            mx-auto
+            grid
+            grid-cols-2
+            lg:grid-cols-4
+            gap-6
+            sm:gap-8
+            text-center
+            divide-y
+            sm:divide-y-0
+            sm:divide-x
+            divide-white/20
+          "
         >
           {/* Stat 1 */}
           <motion.div
@@ -700,8 +825,8 @@ export default function AboutSection() {
       </section>
 
       {/* =========================================================
-      8. CTA SECTION
-  ========================================================= */}
+          8. CTA SECTION
+      ========================================================= */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -709,11 +834,20 @@ export default function AboutSection() {
           once: true,
         }}
         variants={fadeInUp}
-        className="relative w-full py-24 sm:py-28 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#1B2E1E]"
+        className="
+          relative
+          w-full
+          py-20
+          sm:py-24
+          md:py-28
+          px-4
+          sm:px-12
+          lg:px-20
+          overflow-hidden
+          bg-[#1B2E1E]
+        "
       >
-        {/* =========================================================
-        BACKGROUND IMAGE
-    ========================================================= */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src="https://solamoenergy.com/wp-content/uploads/2026/05/New-Project-9.jpg"
@@ -723,20 +857,13 @@ export default function AboutSection() {
             className="object-cover object-center"
           />
 
-          {/* Green Overlay */}
           <div className="absolute inset-0 bg-[#4d741d]/55" />
-
-          {/* Very Subtle Dark Overlay */}
           <div className="absolute inset-0 bg-black/10" />
         </div>
 
-        {/* =========================================================
-        CTA CONTENT
-    ========================================================= */}
+        {/* CTA Content */}
         <div className="relative z-10 w-full max-w-[1250px] mx-auto text-center flex flex-col items-center text-white">
-          {/* =======================================================
-          BOOK NOW BADGE
-      ======================================================= */}
+          {/* BOOK NOW BADGE */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -744,9 +871,25 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="inline-flex items-center gap-2 border border-white/70 rounded-full px-4 py-1.5 mb-7 bg-white/5 backdrop-blur-sm text-white text-sm font-semibold tracking-wide uppercase"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              border
+              border-white/70
+              rounded-full
+              px-4
+              py-1.5
+              mb-7
+              bg-white/5
+              backdrop-blur-sm
+              text-white
+              text-sm
+              font-semibold
+              tracking-wide
+              uppercase
+            "
           >
-            {/* Solar Panel Icon */}
             <svg
               viewBox="0 0 24 24"
               className="w-4 h-4 shrink-0"
@@ -769,9 +912,7 @@ export default function AboutSection() {
             <span>BOOK NOW</span>
           </motion.div>
 
-          {/* =======================================================
-          HEADING
-      ======================================================= */}
+          {/* HEADING */}
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -779,14 +920,22 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl lg:text-[60px] font-black tracking-tight text-white leading-[1.1] max-w-[1200px] mx-auto"
+            className="
+              text-3xl
+              sm:text-5xl
+              lg:text-[60px]
+              font-black
+              tracking-tight
+              text-white
+              leading-[1.1]
+              max-w-[1200px]
+              mx-auto
+            "
           >
             Ready To Make The Switch To Solar? Our Team Is Ready To Help.
           </motion.h2>
 
-          {/* =======================================================
-          FREE CONSULTATION BUTTON
-      ======================================================= */}
+          {/* FREE CONSULTATION BUTTON */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -794,11 +943,34 @@ export default function AboutSection() {
               once: true,
             }}
             variants={fadeInUp}
-            className="pt-9 flex justify-center"
+            className="pt-8 sm:pt-9 flex justify-center"
           >
             <a
               href="#consultation"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-[#79B900] bg-transparent text-white font-semibold text-base sm:text-lg hover:bg-[#79B900] hover:border-[#79B900] hover:text-[#172217] transition-all duration-300"
+              className="
+                group
+                inline-flex
+                items-center
+                justify-center
+                gap-3
+                px-7
+                sm:px-8
+                py-3.5
+                sm:py-4
+                rounded-full
+                border
+                border-[#79B900]
+                bg-transparent
+                text-white
+                font-semibold
+                text-base
+                sm:text-lg
+                hover:bg-[#79B900]
+                hover:border-[#79B900]
+                hover:text-[#172217]
+                transition-all
+                duration-300
+              "
             >
               <span>Free Consultation</span>
 
