@@ -151,14 +151,13 @@ export default function SolamoTrustedBrandsStrip() {
   return (
     <section className="w-full bg-[#f5f5f5] py-4 sm:py-5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-6">
-        <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
+        <div className="bg-white rounded-lg overflow-hidden">
           {/* =====================================================
-              HEADER — matches Flash Deals / Popular Products /
-              Energy Solutions / Popular Brands
+              HEADER
           ===================================================== */}
-          <div className="px-4 sm:px-6 lg:px-7 pt-5 pb-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+          <div className="px-4 sm:px-6 lg:px-7 pt-5 pb-4">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                 <Award className="w-4 h-4 text-black" />
               </div>
               <div>
@@ -176,13 +175,13 @@ export default function SolamoTrustedBrandsStrip() {
           {/* =====================================================
               LOGO SLIDER
           ===================================================== */}
-          <div className="relative px-2 sm:px-4 pb-5">
+          <div className="relative px-10 sm:px-12 pb-5">
             <button
               type="button"
               onClick={() => swiperRef.current?.swiper?.slidePrev()}
               aria-label="Previous brand"
               className="
-                absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-20
+                absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20
                 w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full
                 shadow-md flex items-center justify-center hover:bg-gray-50 transition
               "
@@ -195,7 +194,7 @@ export default function SolamoTrustedBrandsStrip() {
               onClick={() => swiperRef.current?.swiper?.slideNext()}
               aria-label="Next brand"
               className="
-                absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-20
+                absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20
                 w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full
                 shadow-md flex items-center justify-center hover:bg-gray-50 transition
               "
@@ -216,7 +215,7 @@ export default function SolamoTrustedBrandsStrip() {
                 1024: { slidesPerView: 6, spaceBetween: 18 },
                 1280: { slidesPerView: 7, spaceBetween: 18 },
               }}
-              className="!px-8 sm:!px-7"
+              className="w-full"
             >
               {brands.map((brand, idx) => (
                 <SwiperSlide key={idx}>
@@ -226,7 +225,7 @@ export default function SolamoTrustedBrandsStrip() {
                     className="
                       h-[70px] sm:h-[84px] w-full flex items-center justify-center
                       bg-gray-50 border border-gray-100 rounded-md
-                      hover:border-[#feee00] hover:bg-[#fffef0] transition duration-300 group
+                      hover:border-[#84CC16] hover:bg-[#F7FEE7] transition duration-300 group
                     "
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -27,7 +27,7 @@ export default function SolamoCtaBanner() {
               CTA CONTENT
           ===================================================== */}
           <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 py-14 sm:py-20 text-center flex flex-col items-center text-white">
-            <div className="inline-flex items-center gap-2 bg-[#feee00] rounded-full px-3.5 py-1.5 mb-6 text-black text-[10px] sm:text-xs font-bold uppercase tracking-wide">
+            <div className="inline-flex items-center gap-2 bg-[#84CC16] rounded-full px-3.5 py-1.5 mb-6 text-black text-[10px] sm:text-xs font-bold uppercase tracking-wide">
               <Zap className="w-3.5 h-3.5 fill-black shrink-0" />
               <span>Book Now</span>
             </div>
@@ -60,8 +60,8 @@ export default function SolamoCtaBanner() {
                 rel="noopener noreferrer"
                 className="
                   group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md
-                  bg-[#feee00] text-black font-bold text-sm
-                  hover:bg-yellow-300 transition-all duration-300
+                  bg-[#84CC16] text-black font-bold text-sm
+                  hover:bg-[#65A30D] transition-all duration-300
                 "
               >
                 <span>WhatsApp Us Now</span>

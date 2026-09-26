@@ -42,7 +42,7 @@ const heroSlides: HeroSlide[] = [
     badge: "Karachi's #1 Partner",
     heading: (
       <>
-        <span className="text-[#feee00]">Pakistan&apos;s</span> Most Trusted
+        <span className="text-[#84CC16]">Pakistan&apos;s</span> Most Trusted
         Solar Energy Company
       </>
     ),
@@ -57,7 +57,7 @@ const heroSlides: HeroSlide[] = [
     badge: "Limited Time Offer",
     heading: (
       <>
-        Zero Down Payment on <span className="text-[#feee00]">Hybrid</span>{" "}
+        Zero Down Payment on <span className="text-[#84CC16]">Hybrid</span>{" "}
         Solar Systems
       </>
     ),
@@ -72,7 +72,7 @@ const heroSlides: HeroSlide[] = [
     badge: "Now In Stock",
     heading: (
       <>
-        N-Type Bifacial Panels — <span className="text-[#feee00]">More</span>{" "}
+        N-Type Bifacial Panels — <span className="text-[#84CC16]">More</span>{" "}
         Power, Less Roof
       </>
     ),
@@ -164,7 +164,7 @@ export default function SolamoHero() {
 
           <Link
             href="/free-quote"
-            className="shrink-0 bg-[#feee00] text-black font-bold text-[9px] sm:text-xs px-3 sm:px-5 py-1.5 rounded-md whitespace-nowrap hover:bg-yellow-300 transition"
+            className="shrink-0 bg-[#84CC16] text-black font-bold text-[9px] sm:text-xs px-3 sm:px-5 py-1.5 rounded-md whitespace-nowrap hover:bg-[#65A30D] transition"
           >
             Get Free Quote
           </Link>
@@ -251,7 +251,7 @@ export default function SolamoHero() {
                     <div className="relative z-10 h-full flex flex-col justify-center px-5 sm:px-8 lg:px-10 xl:px-12 py-8">
                       <span
                         className="
-                          w-fit inline-flex items-center gap-1.5 bg-[#feee00] text-black
+                          w-fit inline-flex items-center gap-1.5 bg-[#84CC16] text-black
                           font-bold text-[8px] sm:text-[10px] px-2.5 sm:px-3 py-1.5
                           rounded-full mb-3
                         "
@@ -278,9 +278,9 @@ export default function SolamoHero() {
                         <Link
                           href={slide.primaryCta.href}
                           className="
-                            min-h-[38px] bg-[#feee00] text-black font-bold text-[10px] sm:text-xs
+                            min-h-[38px] bg-[#84CC16] text-black font-bold text-[10px] sm:text-xs
                             px-3.5 sm:px-4 py-2.5 rounded-md flex items-center justify-center gap-1
-                            hover:bg-yellow-400 transition
+                            hover:bg-[#65A30D] transition
                           "
                         >
                           {slide.primaryCta.label}
@@ -314,11 +314,11 @@ export default function SolamoHero() {
           {/* RIGHT: FEATURE CARD (static) */}
           <div
             className="
-              relative overflow-hidden bg-[#fff6c9]
+              relative overflow-hidden bg-[#F7FEE7]
               min-h-[300px] sm:min-h-[310px] md:h-[300px] md:min-h-0
             "
           >
-            <div className="absolute right-[-45px] top-[-50px] w-[170px] h-[170px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#feee00]/40" />
+            <div className="absolute right-[-45px] top-[-50px] w-[170px] h-[170px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#84CC16]/40" />
             <div className="absolute right-5 top-6 opacity-[0.12]">
               <Sun
                 className="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px]"
@@ -328,7 +328,7 @@ export default function SolamoHero() {
 
             <div className="relative z-10 h-full px-5 sm:px-7 py-5 flex flex-col justify-between">
               <div>
-                <span className="inline-block bg-black text-[#feee00] font-bold text-[8px] sm:text-[9px] px-2.5 py-1 rounded">
+                <span className="inline-block bg-black text-[#84CC16] font-bold text-[8px] sm:text-[9px] px-2.5 py-1 rounded">
                   FEATURED
                 </span>
 
@@ -357,7 +357,7 @@ export default function SolamoHero() {
                 <Link
                   href="/shop"
                   className="
-                    w-full min-h-[40px] bg-black text-[#feee00] rounded-md
+                    w-full min-h-[40px] bg-black text-[#84CC16] rounded-md
                     flex items-center justify-center gap-1 font-bold text-[10px] sm:text-xs
                     hover:bg-gray-900 transition
                   "
@@ -466,7 +466,7 @@ export default function SolamoHero() {
                 </div>
                 <div className="absolute right-[-20px] bottom-[-20px] w-[115px] h-[115px] sm:w-[125px] sm:h-[125px] rounded-full bg-white/60 flex items-center justify-center group-hover:scale-105 transition">
                   <Sun
-                    className="w-14 h-14 sm:w-16 sm:h-16 text-yellow-500"
+                    className="w-14 h-14 sm:w-16 sm:h-16 text-[#65A30D]"
                     strokeWidth={1.3}
                   />
                 </div>
@@ -477,7 +477,7 @@ export default function SolamoHero() {
                 className="relative min-h-[175px] sm:min-h-[185px] rounded-lg overflow-hidden bg-[#fff0d8] group"
               >
                 <div className="p-3 sm:p-4 relative z-10">
-                  <span className="inline-block bg-black text-[#feee00] text-[7px] sm:text-[8px] font-bold px-2 py-1 rounded">
+                  <span className="inline-block bg-black text-[#84CC16] text-[7px] sm:text-[8px] font-bold px-2 py-1 rounded">
                     POPULAR
                   </span>
                   <h3 className="mt-2 text-[14px] sm:text-[15px] font-black leading-tight">
@@ -514,7 +514,7 @@ export default function SolamoHero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
             <div className="relative z-10 h-full p-5 flex flex-col justify-end">
-              <span className="text-[#feee00] text-[9px] font-bold uppercase">
+              <span className="text-[#84CC16] text-[9px] font-bold uppercase">
                 Solamo Energy
               </span>
               <h2 className="text-white text-[21px] sm:text-[23px] font-black leading-tight mt-1">
@@ -524,7 +524,7 @@ export default function SolamoHero() {
               </h2>
               <Link
                 href="/free-quote"
-                className="w-fit mt-3 bg-[#feee00] text-black font-bold text-[10px] px-4 py-2 rounded-md flex items-center gap-1 hover:bg-yellow-300 transition"
+                className="w-fit mt-3 bg-[#84CC16] text-black font-bold text-[10px] px-4 py-2 rounded-md flex items-center gap-1 hover:bg-[#65A30D] transition"
               >
                 Get Free Quote
                 <ArrowUpRight className="w-3 h-3" />
@@ -538,11 +538,11 @@ export default function SolamoHero() {
               In focus
             </h2>
 
-            <div className="relative min-h-[200px] sm:min-h-[220px] lg:h-[185px] rounded-lg overflow-hidden bg-[#fff6c9]">
-              <div className="absolute right-[-20px] top-[-25px] w-[150px] h-[150px] rounded-full bg-[#feee00]/35" />
+            <div className="relative min-h-[200px] sm:min-h-[220px] lg:h-[185px] rounded-lg overflow-hidden bg-[#F7FEE7]">
+              <div className="absolute right-[-20px] top-[-25px] w-[150px] h-[150px] rounded-full bg-[#84CC16]/35" />
 
               <div className="relative z-10 p-5">
-                <span className="inline-block bg-black text-[#feee00] text-[8px] font-bold px-2.5 py-1 rounded">
+                <span className="inline-block bg-black text-[#84CC16] text-[8px] font-bold px-2.5 py-1 rounded">
                   SOLAMO ENERGY
                 </span>
                 <h3 className="mt-3 text-[22px] sm:text-[23px] font-black leading-[1.02]">
@@ -558,7 +558,7 @@ export default function SolamoHero() {
                 </p>
                 <Link
                   href="/shop"
-                  className="inline-flex items-center gap-1 mt-3 bg-black text-[#feee00] font-bold text-[10px] px-4 py-2 rounded-md hover:bg-gray-900 transition"
+                  className="inline-flex items-center gap-1 mt-3 bg-black text-[#84CC16] font-bold text-[10px] px-4 py-2 rounded-md hover:bg-gray-900 transition"
                 >
                   Shop Now
                   <ArrowUpRight className="w-3 h-3" />
@@ -585,7 +585,7 @@ export default function SolamoHero() {
         }
         .hero-pagination .swiper-pagination-bullet-active {
           width: 20px;
-          background: #feee00;
+          background: #84cc16;
         }
       `}</style>
     </section>

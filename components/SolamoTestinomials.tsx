@@ -134,7 +134,7 @@ export default function SolamoTestimonials() {
           <div className="px-4 sm:px-6 lg:px-7 pt-5 pb-4">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                   <Star className="w-4 h-4 text-black fill-black" />
                 </div>
 
@@ -246,7 +246,7 @@ export default function SolamoTestimonials() {
                 className="
                   w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md
                   flex items-center justify-center text-gray-700
-                  hover:bg-[#feee00] hover:border-[#feee00] hover:text-black
+                  hover:bg-[#84CC16] hover:border-[#84CC16] hover:text-black
                   active:scale-95 transition
                 "
               >
@@ -260,7 +260,7 @@ export default function SolamoTestimonials() {
                 className="
                   w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md
                   flex items-center justify-center text-gray-700
-                  hover:bg-[#feee00] hover:border-[#feee00] hover:text-black
+                  hover:bg-[#84CC16] hover:border-[#84CC16] hover:text-black
                   active:scale-95 transition
                 "
               >

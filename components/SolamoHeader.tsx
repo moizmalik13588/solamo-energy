@@ -30,14 +30,14 @@ export default function SolamoHeader() {
           ANNOUNCEMENT BAR
           Desktop / tablet only
       ========================================================= */}
-      <div className="hidden sm:block bg-[#feee00] text-black text-[11px] sm:text-xs font-semibold py-1.5 px-4 text-center">
+      <div className="hidden sm:block bg-[#84CC16] text-black text-[11px] sm:text-xs font-semibold py-1.5 px-4 text-center">
         Get Free Delivery & Expert Installation with Solamo Energy
       </div>
 
       {/* =========================================================
           MAIN HEADER
       ========================================================= */}
-      <div className="bg-[#feee00]">
+      <div className="bg-white">
         <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-6 xl:px-8">
           {/* =====================================================
               DESKTOP / TABLET MAIN ROW
@@ -67,7 +67,7 @@ export default function SolamoHeader() {
             </Link>
 
             {/* LOCATION - DESKTOP ONLY */}
-            <div className="hidden xl:flex items-center gap-2 shrink-0 text-xs cursor-pointer rounded-md px-2 py-1.5 hover:bg-yellow-400 transition">
+            <div className="hidden xl:flex items-center gap-2 shrink-0 text-xs cursor-pointer rounded-md px-2 py-1.5 hover:bg-[#65A30D] transition">
               <MapPin className="w-5 h-5 text-black shrink-0" />
 
               <div className="leading-tight">
@@ -100,11 +100,12 @@ export default function SolamoHeader() {
                   sm:pl-4
                   pr-11
                   rounded-md
-                  border-0
-                  outline-none
-                  shadow-sm
-                  focus:ring-2
-                  focus:ring-black/10
+                 border-2
+border-[#84CC16]
+outline-none
+shadow-sm
+focus:ring-2
+focus:ring-[#84CC16]
                 "
               />
 
@@ -141,7 +142,7 @@ export default function SolamoHeader() {
                 <span>عربي</span>
               </button>
 
-              <div className="hidden lg:block h-5 w-px bg-yellow-600/40" />
+              <div className="hidden lg:block h-5 w-px bg-[#4D7C0F]/40" />
 
               {/* ACCOUNT */}
               <Link
@@ -154,7 +155,7 @@ export default function SolamoHeader() {
                 <span className="hidden lg:inline text-sm">Account</span>
               </Link>
 
-              <div className="hidden sm:block h-5 w-px bg-yellow-600/40" />
+              <div className="hidden sm:block h-5 w-px bg-[#4D7C0F]/40" />
 
               {/* CART */}
               <Link
@@ -174,7 +175,7 @@ export default function SolamoHeader() {
                     -right-2
                     sm:-right-2.5
                     bg-black
-                    text-[#feee00]
+                    text-[#84CC16]
                     text-[9px]
                     font-bold
                     w-4
@@ -207,11 +208,12 @@ export default function SolamoHeader() {
                   sm:w-10
                   sm:h-10
                   rounded-md
-                  bg-yellow-400
+                
                   flex
                   items-center
                   justify-center
-                  hover:bg-yellow-500
+                 bg-gray-100
+hover:bg-[#ECFCCB]
                   transition
                 "
               >
@@ -231,7 +233,7 @@ export default function SolamoHeader() {
 
           Separate row gives phones enough width for search.
       ========================================================= */}
-      <div className="lg:hidden bg-[#feee00] px-3 sm:px-5 pb-2.5">
+      <div className="lg:hidden bg-white px-3 sm:px-5 pb-2.5">
         <div className="relative max-w-[1400px] mx-auto">
           <input
             type="search"
@@ -246,11 +248,12 @@ export default function SolamoHeader() {
               pl-3
               pr-10
               rounded-md
-              border-0
-              outline-none
-              shadow-sm
-              focus:ring-2
-              focus:ring-black/10
+              border-2
+border-[#84CC16]
+outline-none
+shadow-sm
+focus:ring-2
+focus:ring-[#84CC16]
             "
           />
 
@@ -500,7 +503,7 @@ export default function SolamoHeader() {
                   </div>
 
                   {/* PROMO PANEL */}
-                  <div className="relative rounded-lg overflow-hidden bg-gradient-to-br from-[#feee00] to-yellow-300 flex flex-col justify-end p-5 min-h-[180px]">
+                  <div className="relative rounded-lg overflow-hidden bg-gradient-to-br from-[#84CC16] to-[#65A30D] flex flex-col justify-end p-5 min-h-[180px]">
                     <p className="text-[10px] font-bold uppercase tracking-wide text-black/70">
                       Karachi&apos;s #1 Partner
                     </p>
@@ -828,13 +831,13 @@ export default function SolamoHeader() {
                     items-center
                     justify-center
                     gap-2
-                    bg-[#feee00]
+                   bg-white
                     text-black
                     font-bold
                     text-sm
                     rounded-lg
                     shadow-sm
-                    hover:bg-yellow-400
+                   hover:bg-[#ECFCCB]
                     transition
                   "
                 >

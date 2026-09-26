@@ -46,7 +46,7 @@ export default function SolamoBrands() {
           <div className="px-4 sm:px-6 lg:px-7 pt-5 pb-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                   <Store className="w-4 h-4 text-black" />
                 </div>
 
@@ -248,12 +248,12 @@ export default function SolamoBrands() {
                         </div>
                       </div>
 
-                      {/* YELLOW HOVER BAR */}
+                      {/* GREEN HOVER BAR */}
 
                       <div
                         className="
                           h-1
-                          bg-[#feee00]
+                          bg-[#84CC16]
                           scale-x-0
                           group-hover:scale-x-100
                           transition-transform
@@ -293,7 +293,7 @@ export default function SolamoBrands() {
                 w-full
                 h-[38px]
                 bg-[#111]
-                text-[#feee00]
+                text-[#84CC16]
                 rounded-md
                 flex
                 items-center

@@ -12,10 +12,6 @@ import "swiper/css";
 export default function SolamoEnergySolutions() {
   const sliderRef = useRef<SwiperRef>(null);
 
-  // ==========================================
-  // ALL ENERGY PRODUCTS FROM EXISTING DATA
-  // ==========================================
-
   const energyProducts = Object.values(brandsData)
     .flatMap((brand) =>
       (brand.products || []).map((product) => ({
@@ -23,19 +19,14 @@ export default function SolamoEnergySolutions() {
         brandName: brand.name,
       })),
     )
-
-    // Sirf energy related products
     .filter((product) => {
       const category = String(product.category || "").toLowerCase();
-
       return (
         category.includes("battery") ||
         category.includes("inverter") ||
         category.includes("power bank")
       );
     })
-
-    // Price 0 ya invalid products remove
     .filter((product) => Number(product.price) > 0);
 
   if (energyProducts.length === 0) return null;
@@ -44,17 +35,12 @@ export default function SolamoEnergySolutions() {
     <section className="w-full bg-[#f5f5f5] py-4 sm:py-5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-6">
         <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
-          {/* =====================================================
-              HEADER — matches Flash Deals / Popular Products
-          ===================================================== */}
-
           <div className="px-4 sm:px-6 lg:px-7 pt-5 pb-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                   <Zap className="w-4 h-4 text-black fill-black" />
                 </div>
-
                 <div>
                   <h2 className="text-[20px] sm:text-[23px] font-black text-[#111] leading-none">
                     Energy Solutions
@@ -64,7 +50,6 @@ export default function SolamoEnergySolutions() {
                   </p>
                 </div>
               </div>
-
               <Link
                 href="/shop"
                 className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-[#111] hover:text-gray-600 transition"
@@ -75,20 +60,12 @@ export default function SolamoEnergySolutions() {
             </div>
           </div>
 
-          {/* =====================================================
-              PRODUCT SLIDER
-          ===================================================== */}
-
           <div className="relative px-2 sm:px-4 pb-5">
             <button
               type="button"
               aria-label="Previous products"
               onClick={() => sliderRef.current?.swiper?.slidePrev()}
-              className="
-                absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-20
-                w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full
-                shadow-md flex items-center justify-center hover:bg-gray-50 transition
-              "
+              className="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition"
             >
               <ChevronLeft className="w-4 h-4 text-gray-700" />
             </button>
@@ -97,11 +74,7 @@ export default function SolamoEnergySolutions() {
               type="button"
               aria-label="Next products"
               onClick={() => sliderRef.current?.swiper?.slideNext()}
-              className="
-                absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-20
-                w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full
-                shadow-md flex items-center justify-center hover:bg-gray-50 transition
-              "
+              className="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition"
             >
               <ChevronRight className="w-4 h-4 text-gray-700" />
             </button>
@@ -120,24 +93,12 @@ export default function SolamoEnergySolutions() {
             >
               {energyProducts.map((product, index) => (
                 <SwiperSlide key={`${product.id}-${index}`}>
-                  {/* =================================================
-                      PRODUCT CARD — same shape/radius as other sections
-                  ================================================= */}
-
                   <Link
                     href={product.link}
-                    className="
-                      group block bg-white border border-gray-200 rounded-md overflow-hidden h-full
-                      hover:shadow-md hover:border-gray-300 transition
-                    "
+                    className="group block bg-white border border-gray-200 rounded-md overflow-hidden h-full hover:shadow-md hover:border-gray-300 transition"
                   >
                     <div className="relative h-[145px] sm:h-[165px] lg:h-[180px] bg-white flex items-center justify-center p-3">
-                      <span
-                        className="
-                          absolute left-2 top-2 z-10 inline-flex items-center gap-1
-                          bg-[#feee00] text-black font-black text-[8px] px-2 py-1 rounded-sm
-                        "
-                      >
+                      <span className="absolute left-2 top-2 z-10 inline-flex items-center gap-1 bg-[#84CC16] text-black font-black text-[8px] px-2 py-1 rounded-sm">
                         <Zap className="w-2.5 h-2.5 fill-current" />
                         ENERGY
                       </span>
@@ -155,7 +116,6 @@ export default function SolamoEnergySolutions() {
                       <span className="text-[9px] uppercase font-bold text-gray-400">
                         {product.brandName}
                       </span>
-
                       <h3 className="mt-0.5 text-[11px] sm:text-[12px] font-medium text-[#222] leading-[1.35] line-clamp-2 min-h-[32px]">
                         {product.name}
                       </h3>
@@ -169,7 +129,7 @@ export default function SolamoEnergySolutions() {
                         </span>
                       </div>
 
-                      <div className="mt-3 w-full h-[32px] bg-[#feee00] text-black rounded-sm flex items-center justify-center text-[9px] sm:text-[10px] font-bold group-hover:bg-[#f4df00] transition">
+                      <div className="mt-3 w-full h-[32px] bg-[#84CC16] text-black rounded-sm flex items-center justify-center text-[9px] sm:text-[10px] font-bold group-hover:bg-[#65A30D] transition">
                         View Details
                       </div>
                     </div>
@@ -179,14 +139,10 @@ export default function SolamoEnergySolutions() {
             </Swiper>
           </div>
 
-          {/* =====================================================
-              MOBILE VIEW ALL
-          ===================================================== */}
-
           <div className="sm:hidden px-4 pb-5">
             <Link
               href="/shop"
-              className="w-full h-[38px] bg-[#111] text-[#feee00] rounded-md flex items-center justify-center gap-1 text-[10px] font-bold"
+              className="w-full h-[38px] bg-[#111] text-[#84CC16] rounded-md flex items-center justify-center gap-1 text-[10px] font-bold"
             >
               View All Solutions
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -133,21 +133,12 @@ function useCountdown() {
 function TimeBlock({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-black text-[#feee00] font-black text-[13px] sm:text-base rounded-md w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center tabular-nums">
+      <div className="bg-black text-[#84CC16] font-black text-[13px] sm:text-base rounded-md w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center tabular-nums">
         {String(value).padStart(2, "0")}
       </div>
       <span className="text-[7px] sm:text-[8px] text-gray-400 font-semibold uppercase mt-1">
         {label}
       </span>
-    </div>
-  );
-}
-
-function TimeSeparator() {
-  return (
-    <div className="h-8 sm:h-9 flex flex-col items-center justify-center gap-[3px] sm:gap-1">
-      <span className="w-[3px] h-[3px] sm:w-1 sm:h-1 rounded-full bg-black" />
-      <span className="w-[3px] h-[3px] sm:w-1 sm:h-1 rounded-full bg-black" />
     </div>
   );
 }
@@ -163,7 +154,7 @@ export default function SolamoFlashdeals() {
   return (
     <section className="w-full bg-[#f5f5f5] py-4 sm:py-5 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-6">
-        <div className="bg-white rounded-lg overflow-hidden border border-[#feee00]/60">
+        <div className="bg-white rounded-lg overflow-hidden border border-[#84CC16]/60">
           {/* =====================================================
               HEADER — title + live countdown
           ===================================================== */}
@@ -184,12 +175,12 @@ export default function SolamoFlashdeals() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between sm:justify-end gap-3">
-                <div className="flex items-start gap-1.5">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5">
                   <TimeBlock value={hours} label="Hrs" />
-                  <TimeSeparator />
+                  <span className="text-black font-black pb-4">:</span>
                   <TimeBlock value={minutes} label="Min" />
-                  <TimeSeparator />
+                  <span className="text-black font-black pb-4">:</span>
                   <TimeBlock value={seconds} label="Sec" />
                 </div>
 
@@ -291,7 +282,7 @@ export default function SolamoFlashdeals() {
                         )}
                       </div>
 
-                      <div className="mt-3 w-full h-[32px] bg-[#feee00] text-black rounded-sm flex items-center justify-center text-[9px] sm:text-[10px] font-bold group-hover:bg-[#f4df00] transition">
+                      <div className="mt-3 w-full h-[32px] bg-[#84CC16] text-black rounded-sm flex items-center justify-center text-[9px] sm:text-[10px] font-bold group-hover:bg-[#65A30D] transition">
                         Grab Deal
                       </div>
                     </div>
@@ -304,7 +295,7 @@ export default function SolamoFlashdeals() {
           <div className="sm:hidden px-4 pb-5">
             <Link
               href="/shop"
-              className="w-full h-[38px] bg-[#111] text-[#feee00] rounded-md flex items-center justify-center gap-1 text-[10px] font-bold"
+              className="w-full h-[38px] bg-[#111] text-[#84CC16] rounded-md flex items-center justify-center gap-1 text-[10px] font-bold"
             >
               View All Deals
               <ArrowUpRight className="w-3.5 h-3.5" />

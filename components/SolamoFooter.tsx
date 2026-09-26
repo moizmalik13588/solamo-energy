@@ -3,12 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Info, Mail, Phone, MapPin } from "lucide-react";
 
-// =============================================================
-// REAL SOLAMO CATEGORY / SERVICE LINKS
-// Pulled from the actual header nav + shop routes already in use
-// across the site — nothing here points to a page that doesn't exist.
-// =============================================================
-
 const solarPanelLinks = [
   { name: "Monocrystalline", href: "/shop/monocrystalline" },
   { name: "Bifacial Panels", href: "/shop/bifacial" },
@@ -36,7 +30,6 @@ const serviceLinks = [
   { name: "Panel Cleaning", href: "/services/cleaning" },
 ];
 
-// Same real brands featured in the Trusted Brands strip — a subset here.
 const topBrandLinks = [
   { name: "Jinko Solar", href: "/brand/jinko-solar/" },
   { name: "Huawei", href: "/brand/huawei/" },
@@ -84,9 +77,6 @@ function FooterColumn({
 export default function SolamoFooter() {
   return (
     <footer className="bg-[#f5f5f5] text-[#111] border-t border-gray-200 mt-10">
-      {/* =====================================================
-          "WE'RE ALWAYS HERE TO HELP" BAR
-      ===================================================== */}
       <div className="bg-white border-b border-gray-200 py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
           <div>
@@ -105,7 +95,7 @@ export default function SolamoFooter() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-[#f8f9fa] hover:bg-gray-100 p-3 rounded-lg border border-gray-100 transition"
             >
-              <span className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+              <span className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                 <Info className="w-4 h-4 text-black" />
               </span>
               <div>
@@ -122,7 +112,7 @@ export default function SolamoFooter() {
               href="mailto:info@Solamoenergy.com"
               className="flex items-center gap-3 bg-[#f8f9fa] hover:bg-gray-100 p-3 rounded-lg border border-gray-100 transition"
             >
-              <span className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+              <span className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4 text-black" />
               </span>
               <div>
@@ -139,7 +129,7 @@ export default function SolamoFooter() {
               href="tel:+923141349717"
               className="flex items-center gap-3 bg-[#f8f9fa] hover:bg-gray-100 p-3 rounded-lg border border-gray-100 transition"
             >
-              <span className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center shrink-0">
+              <span className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center shrink-0">
                 <Phone className="w-4 h-4 text-black" />
               </span>
               <div>
@@ -155,9 +145,6 @@ export default function SolamoFooter() {
         </div>
       </div>
 
-      {/* =====================================================
-          MULTI-COLUMN LINKS
-      ===================================================== */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
           <FooterColumn title="Solar Panels" links={solarPanelLinks} />
@@ -171,7 +158,6 @@ export default function SolamoFooter() {
           <FooterColumn title="Company" links={companyLinks} />
         </div>
 
-        {/* ADDRESS */}
         <div className="flex items-start gap-2.5 mt-10 pt-8 border-t border-gray-200 text-sm text-gray-600 max-w-md">
           <MapPin className="w-4 h-4 text-black shrink-0 mt-0.5" />
           <span>
@@ -181,9 +167,6 @@ export default function SolamoFooter() {
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM BAR — copyright + social + legal links
-      ===================================================== */}
       <div className="bg-white border-t border-gray-200 py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-4">
@@ -216,7 +199,7 @@ export default function SolamoFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center hover:opacity-80 transition"
+              className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center hover:opacity-80 transition"
             >
               <svg className="w-4 h-4 fill-black" viewBox="0 0 24 24">
                 <path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.6 1.7-1.6h1.6V3.3C16.5 3.2 15.4 3 14.2 3c-2.4 0-4.1 1.5-4.1 4.2v2.6H7.5V13H10v8h3.5z" />
@@ -228,7 +211,7 @@ export default function SolamoFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center hover:opacity-80 transition"
+              className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center hover:opacity-80 transition"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24">
                 <rect
@@ -258,7 +241,7 @@ export default function SolamoFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center hover:opacity-80 transition"
+              className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center hover:opacity-80 transition"
             >
               <svg className="w-4 h-4 fill-black" viewBox="0 0 24 24">
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
@@ -270,7 +253,7 @@ export default function SolamoFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="w-9 h-9 rounded-full bg-[#feee00] flex items-center justify-center hover:opacity-80 transition"
+              className="w-9 h-9 rounded-full bg-[#84CC16] flex items-center justify-center hover:opacity-80 transition"
             >
               <svg className="w-4 h-4 fill-black" viewBox="0 0 24 24">
                 <path d="M16.6 3c.3 2 1.7 3.6 3.7 3.9v2.6c-1.4 0-2.7-.4-3.8-1.2v6.4a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.07v2.7a3 3 0 1 0 2.1 2.86V3h2.8z" />

@@ -11,12 +11,12 @@ export default function SolamoMarquee() {
   ];
 
   return (
-    <div className="bg-[#111] text-[#feee00] py-3.5 sm:py-4 overflow-hidden whitespace-nowrap flex items-center">
+    <div className="bg-[#111] text-[#84CC16] py-3.5 sm:py-4 overflow-hidden whitespace-nowrap flex items-center">
       <div className="animate-marquee flex items-center gap-10 text-[13px] sm:text-base font-bold tracking-wide">
         {[...items, ...items, ...items].map((text, idx) => (
           <div key={idx} className="flex items-center gap-7">
             <span>{text}</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#feee00] inline-block shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#84CC16] inline-block shrink-0" />
           </div>
         ))}
       </div>
