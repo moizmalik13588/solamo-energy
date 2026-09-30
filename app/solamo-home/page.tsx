@@ -1,5 +1,6 @@
 import SolamoHeader from "@/components/SolamoHeader";
 import SolamoHero from "@/components/SolamoHero";
+import SolamoInstallationReminder from "@/components/SolamoInstallationReminder";
 import SolamoFlashdeals from "@/components/Solamoflashdeals";
 import SolamoProductSection from "@/components/SolamoProductSection";
 import SolamoMarquee from "@/components/SolamoMarquee";
@@ -17,6 +18,8 @@ export default function SolamoHomePage() {
     <main className="min-h-screen bg-gray-100">
       <SolamoHeader />
       <SolamoHero /> {/* Hero */}
+      <SolamoInstallationReminder />{" "}
+      {/* Reminder 1: Between Hero and FlashDeals */}
       <SolamoFlashdeals /> {/* noon: Deals & Offers */}
       <SolamoProductSection /> {/* ProductSection */}
       <SolamoMarquee /> {/* MarqueeSection */}
@@ -29,6 +32,8 @@ export default function SolamoHomePage() {
       <SolamoWhySolamo /> {/* WhyChoose + ServiceSection (combined) */}
       <SolamoCtaBanner /> {/* CtaBanner */}
       <SolamoTestimonials /> {/* Testimonials */}
+      <SolamoInstallationReminder variant="homepage" />{" "}
+      {/* Reminder 2: Between Testimonials and Footer */}
       <SolamoFooter /> {/* Footer */}
       <WhatsAppFloat />{" "}
       {/* unchanged — floating button, no Noon redesign needed */}
