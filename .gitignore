@@ -1,3 +1,6 @@
 node_modules
 .next
 app/shop/[[]brand[]]/[[]slug[]]/fonts/
+
+public/reference/
+public/fonts/
