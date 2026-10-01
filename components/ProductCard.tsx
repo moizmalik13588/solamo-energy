@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Product } from "@/lib/brand-data";
 
 interface ProductCardProps {
@@ -35,12 +36,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
 
-        <a
+        <Link
           href={product?.link || "#"}
           className="block w-full text-center bg-lime-500 hover:bg-lime-600 text-white py-2.5 rounded-md font-medium transition-colors"
         >
           See Details
-        </a>
+        </Link>
       </div>
     </div>
   );
