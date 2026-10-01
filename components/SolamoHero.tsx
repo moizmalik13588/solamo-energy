@@ -316,7 +316,7 @@ export default function SolamoHero() {
           {/* RIGHT: FEATURE CARD (static) */}
           <div
             className="
-              relative overflow-hidden bg-[#F7FEE7]
+              hidden md:block relative overflow-hidden bg-[#F7FEE7]
               min-h-[300px] sm:min-h-[310px] md:h-[300px] md:min-h-0
             "
           >
@@ -441,7 +441,7 @@ export default function SolamoHero() {
         {/* =========================================================
             4. CONTENT MODULES
         ========================================================= */}
-        <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="hidden md:grid mt-4 grid-cols-1 lg:grid-cols-3 gap-4">
           {/* MORE REASONS */}
           <div>
             <h2 className="text-[19px] sm:text-[21px] lg:text-[22px] font-bold text-[#111] mb-3 px-1">
