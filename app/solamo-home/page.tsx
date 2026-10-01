@@ -22,8 +22,8 @@ export default function SolamoHomePage() {
       {/* Reminder 1: Between Hero and FlashDeals */}
       <BrandAdBanner video="/ads/banner-1.mp4.mp4" /> {/* Ad Slot 1 */}
       <SolamoFlashdeals /> {/* noon: Deals & Offers */}
-      <BrandAdBanner video="/ads/banner-2.mp4.mp4" /> {/* Ad Slot: After Flash Deals */}
       <SolamoMarquee /> {/* MarqueeSection */}
+      <BrandAdBanner video="/ads/banner-2.mp4.mp4" /> {/* Ad Slot: After Marquee */}
       {/* Real Product Sections */}
       <SolamoProductCarousel
         title="Batteries"
