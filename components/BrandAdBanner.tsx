@@ -9,6 +9,8 @@ interface BrandAdBannerProps {
   brand?: string;
   image?: string;
   video?: string;
+  mobileImage?: string;
+  mobileVideo?: string;
   href?: string;
   alt?: string;
 }
@@ -17,11 +19,16 @@ export default function BrandAdBanner({
   brand,
   image,
   video,
+  mobileImage,
+  mobileVideo,
   href,
   alt = "Brand advertisement",
 }: BrandAdBannerProps) {
   const [videoError, setVideoError] = useState(false);
+  const [mobileVideoError, setMobileVideoError] = useState(false);
+
   let finalImage = image;
+  let finalMobileImage = mobileImage;
   let finalHref = href;
   let finalAlt = alt;
 
@@ -39,10 +46,50 @@ export default function BrandAdBanner({
   const isExternalLink =
     finalHref?.startsWith("http") || finalHref?.startsWith("//");
   const showVideo = !!video && !videoError;
+  const showMobileVideo = !!mobileVideo && !mobileVideoError;
+  const hasMobileCreative = showMobileVideo || !!finalMobileImage;
+  const hasMedia = showVideo || !!finalImage || hasMobileCreative;
+
+  const wrapLink = (content: React.ReactNode) => {
+    if (!finalHref) return <div className="relative block w-full h-full">{content}</div>;
+    return isExternalLink ? (
+      <a
+        href={finalHref}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        className="relative block w-full h-full"
+      >
+        {content}
+      </a>
+    ) : (
+      <Link href={finalHref} className="relative block w-full h-full">
+        {content}
+      </Link>
+    );
+  };
 
   const renderContent = () => {
-    if (showVideo) {
-      const videoElement = (
+    if (hasMobileCreative) {
+      const mobileElement = showMobileVideo ? (
+        <video
+          src={mobileVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="object-cover w-full h-full"
+          onError={() => setMobileVideoError(true)}
+        />
+      ) : (
+        <img
+          src={finalMobileImage}
+          alt={finalAlt}
+          className="object-cover w-full h-full transition duration-300 hover:opacity-95"
+        />
+      );
+
+      const desktopElement = showVideo ? (
         <video
           src={video}
           autoPlay
@@ -53,60 +100,51 @@ export default function BrandAdBanner({
           className="object-cover w-full h-full"
           onError={() => setVideoError(true)}
         />
-      );
+      ) : finalImage ? (
+        <img
+          src={finalImage}
+          alt={finalAlt}
+          className="object-cover w-full h-full transition duration-300 hover:opacity-95"
+        />
+      ) : null;
 
-      if (finalHref) {
-        return isExternalLink ? (
-          <a
-            href={finalHref}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="relative block w-full h-full"
-          >
-            {videoElement}
-          </a>
-        ) : (
-          <Link href={finalHref} className="relative block w-full h-full">
-            {videoElement}
-          </Link>
-        );
-      }
-      return <div className="relative block w-full h-full">{videoElement}</div>;
+      return (
+        <>
+          <div className="block md:hidden w-full h-full">
+            {wrapLink(mobileElement)}
+          </div>
+          <div className="hidden md:block w-full h-full">
+            {wrapLink(desktopElement)}
+          </div>
+        </>
+      );
+    }
+
+    if (showVideo) {
+      const videoElement = (
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="object-contain md:object-cover w-full h-full"
+          onError={() => setVideoError(true)}
+        />
+      );
+      return wrapLink(videoElement);
     }
 
     if (finalImage) {
-      return finalHref ? (
-        isExternalLink ? (
-          <a
-            href={finalHref}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="relative block w-full h-full"
-          >
-            <img
-              src={finalImage}
-              alt={finalAlt}
-              className="object-cover w-full h-full transition duration-300 hover:opacity-95"
-            />
-          </a>
-        ) : (
-          <Link href={finalHref} className="relative block w-full h-full">
-            <img
-              src={finalImage}
-              alt={finalAlt}
-              className="object-cover w-full h-full transition duration-300 hover:opacity-95"
-            />
-          </Link>
-        )
-      ) : (
-        <div className="relative block w-full h-full">
-          <img
-            src={finalImage}
-            alt={finalAlt}
-            className="object-cover w-full h-full"
-          />
-        </div>
+      const imageElement = (
+        <img
+          src={finalImage}
+          alt={finalAlt}
+          className="object-contain md:object-cover w-full h-full transition duration-300 hover:opacity-95"
+        />
       );
+      return wrapLink(imageElement);
     }
 
     return (
@@ -130,11 +168,21 @@ export default function BrandAdBanner({
     );
   };
 
+  const containerClasses = hasMobileCreative
+    ? "relative w-full aspect-[3/1] md:aspect-auto md:h-[140px] lg:h-[180px] bg-[#F9FAFB] border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center"
+    : hasMedia
+    ? "relative w-full aspect-[1200/180] md:aspect-auto md:h-[140px] lg:h-[180px] bg-[#F9FAFB] border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center"
+    : "relative w-full min-h-[100px] md:min-h-0 md:h-[140px] lg:h-[180px] bg-[#F9FAFB] border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center";
+
   return (
     <div className="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-6 xl:px-8 my-6">
-      <div className="relative w-full h-[100px] md:h-[140px] lg:h-[180px] bg-[#F9FAFB] border border-gray-200 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center">
-        {/* Small Advertisement Label in the corner */}
-        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 bg-gray-200/90 text-gray-600 text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded tracking-wide uppercase shadow-xs">
+      {/* Mobile Advertisement Label (outside & above box, below md) */}
+      <div className="md:hidden text-right text-[9px] uppercase tracking-wide text-gray-500 mb-1 px-1">
+        Advertisement
+      </div>
+      <div className={containerClasses}>
+        {/* Desktop Advertisement Label (inside box, md up) */}
+        <div className="hidden md:block absolute top-3 right-3 z-10 bg-gray-200/90 text-gray-600 text-xs font-semibold px-2 py-0.5 rounded tracking-wide uppercase shadow-xs">
           Advertisement
         </div>
         {renderContent()}

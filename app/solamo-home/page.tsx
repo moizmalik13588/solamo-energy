@@ -22,6 +22,7 @@ export default function SolamoHomePage() {
       {/* Reminder 1: Between Hero and FlashDeals */}
       <BrandAdBanner video="/ads/banner-1.mp4.mp4" /> {/* Ad Slot 1 */}
       <SolamoFlashdeals /> {/* noon: Deals & Offers */}
+      <BrandAdBanner video="/ads/banner-2.mp4.mp4" /> {/* Ad Slot: After Flash Deals */}
       <SolamoMarquee /> {/* MarqueeSection */}
       {/* Real Product Sections */}
       <SolamoProductCarousel
@@ -38,6 +39,7 @@ export default function SolamoHomePage() {
         badgeText="INVERTER"
         viewAllHref="/inverters"
       />
+      <BrandAdBanner video="/ads/banner-1.mp4.mp4" /> {/* Ad Slot: After Inverters */}
       <SolamoProductCarousel
         title="Solar Panels"
         subtitle="High-efficiency photovoltaic modules"
@@ -53,6 +55,7 @@ export default function SolamoHomePage() {
         viewAllHref="/shop"
         dummyProducts={dummyProductsData.cables}
       />
+      <BrandAdBanner video="/ads/banner-2.mp4.mp4" /> {/* Ad Slot: After Cables & Wiring */}
       <SolamoProductCarousel
         title="Breakers & Protection"
         subtitle="DC breakers, SPDs & electrical safety"
@@ -67,6 +70,7 @@ export default function SolamoHomePage() {
         viewAllHref="/shop"
         dummyProducts={dummyProductsData.accessories}
       />
+      <BrandAdBanner video="/ads/banner-1.mp4.mp4" /> {/* Ad Slot: After Accessories */}
       <SolamoProductCarousel
         title="Power Banks (All-in-One)"
         subtitle="Portable power stations & solar generators"
@@ -81,6 +85,7 @@ export default function SolamoHomePage() {
         viewAllHref="/shop"
         dummyProducts={dummyProductsData.fireExtinguishers}
       />
+      <BrandAdBanner video="/ads/banner-2.mp4.mp4" /> {/* Ad Slot: After Fire Extinguisher */}
       <SolamoBrands /> {/* noon: Brand/Store highlights (with product counts) */}
       <SolamoWhySolamo /> {/* WhyChoose + ServiceSection (combined) */}
       <SolamoCtaBanner /> {/* CtaBanner */}
